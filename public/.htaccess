@@ -1,0 +1,18 @@
+Options -MultiViews
+RewriteEngine On
+RewriteBase /new-wexo/
+
+DirectoryIndex index.html
+
+# Serve arquivos e pastas existentes diretamente
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+# Redireciona raiz para /pt/
+RewriteRule ^$ /new-wexo/pt/ [R=302,L]
+
+# Tudo mais cai no index da rota com trailing slash
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ /new-wexo/$1/index.html [L]

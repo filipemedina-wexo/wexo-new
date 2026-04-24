@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wexo — Pesquisa de Mercado & Reposicionamento</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0a0a0f;
+    --surface: #13131a;
+    --surface2: #1c1c28;
+    --accent: #e8c97a;
+    --accent2: #a07bf5;
+    --accent3: #4fd1a5;
+    --text: #f0eff4;
+    --muted: #7a7a9a;
+    --border: rgba(255,255,255,0.07);
+    --red: #f06464;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1rem 3rem;
+    background: rgba(10,10,15,0.85);
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--border);
+  }
+  .nav-logo { font-family: 'Playfair Display', serif; font-size: 1.25rem; letter-spacing: 0.1em; color: var(--accent); }
+  .nav-sub { font-size: 0.7rem; color: var(--muted); letter-spacing: 0.2em; text-transform: uppercase; margin-top: 2px; }
+  .nav-pills { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+  .pill {
+    padding: 0.3rem 0.85rem; border-radius: 999px;
+    font-size: 0.7rem; letter-spacing: 0.08em; text-transform: uppercase;
+    border: 1px solid var(--border); color: var(--muted); cursor: pointer;
+    transition: all 0.2s;
+    text-decoration: none;
+  }
+  .pill:hover { border-color: var(--accent); color: var(--accent); }
+
+  /* ── SLIDES ── */
+  .slide {
+    min-height: 100vh; padding: 7rem 3rem 4rem;
+    display: flex; flex-direction: column; justify-content: center;
+    position: relative; overflow: hidden;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .slide-num {
+    position: absolute; top: 5.5rem; right: 3rem;
+    font-size: 0.65rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--muted);
+  }
+
+  /* ── HERO ── */
+  #hero {
+    background: radial-gradient(ellipse 80% 60% at 60% 40%, rgba(160,123,245,0.12) 0%, transparent 70%),
+                radial-gradient(ellipse 50% 40% at 20% 80%, rgba(232,201,122,0.08) 0%, transparent 60%);
+    align-items: center; text-align: center;
+  }
+  .hero-eyebrow {
+    font-size: 0.7rem; letter-spacing: 0.35em; text-transform: uppercase; color: var(--accent);
+    border: 1px solid rgba(232,201,122,0.3); border-radius: 999px;
+    display: inline-block; padding: 0.4rem 1.2rem; margin-bottom: 2rem;
+  }
+  .hero-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(3rem, 7vw, 6rem);
+    line-height: 1.05;
+    margin-bottom: 1.5rem;
+  }
+  .hero-title em { font-style: italic; color: var(--accent); }
+  .hero-sub { font-size: 1.05rem; color: var(--muted); max-width: 560px; margin: 0 auto 3rem; }
+  .hero-meta {
+    display: flex; gap: 3rem; justify-content: center; flex-wrap: wrap;
+    font-size: 0.75rem; color: var(--muted); letter-spacing: 0.1em; text-transform: uppercase;
+  }
+  .hero-meta span { color: var(--text); font-size: 1.1rem; font-weight: 500; display: block; margin-bottom: 0.25rem; }
+
+  /* ── SECTION LABELS ── */
+  .section-label {
+    font-size: 0.65rem; letter-spacing: 0.35em; text-transform: uppercase;
+    color: var(--accent2); margin-bottom: 0.75rem;
+  }
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    line-height: 1.1;
+    margin-bottom: 1rem;
+  }
+  .section-desc { color: var(--muted); max-width: 640px; margin-bottom: 3rem; font-size: 0.95rem; }
+
+  /* ── GRID CARDS ── */
+  .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
+  .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.25rem; }
+  .grid-4 { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; }
+
+  .card {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 1rem; padding: 1.75rem;
+    transition: border-color 0.25s, transform 0.25s;
+  }
+  .card:hover { border-color: rgba(255,255,255,0.15); transform: translateY(-3px); }
+  .card-icon { font-size: 1.8rem; margin-bottom: 1rem; }
+  .card-title { font-family: 'Playfair Display', serif; font-size: 1.15rem; margin-bottom: 0.5rem; }
+  .card-text { font-size: 0.85rem; color: var(--muted); line-height: 1.6; }
+
+  .card.accent-gold { border-left: 3px solid var(--accent); }
+  .card.accent-purple { border-left: 3px solid var(--accent2); }
+  .card.accent-green { border-left: 3px solid var(--accent3); }
+  .card.accent-red { border-left: 3px solid var(--red); }
+
+  /* ── BIG STAT ── */
+  .stat-block {
+    background: var(--surface); border: 1px solid var(--border); border-radius: 1rem;
+    padding: 2rem; text-align: center;
+  }
+  .stat-num {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    color: var(--accent); line-height: 1;
+    margin-bottom: 0.5rem;
+  }
+  .stat-label { font-size: 0.8rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.1em; }
+
+  /* ── PROGRESS / BAR ── */
+  .bar-item { margin-bottom: 1.5rem; }
+  .bar-label { display: flex; justify-content: space-between; margin-bottom: 0.5rem; font-size: 0.85rem; }
+  .bar-track { height: 6px; background: var(--surface2); border-radius: 999px; overflow: hidden; }
+  .bar-fill { height: 100%; border-radius: 999px; transition: width 1s ease; }
+  .bar-gold { background: var(--accent); }
+  .bar-purple { background: var(--accent2); }
+  .bar-green { background: var(--accent3); }
+  .bar-red { background: var(--red); }
+
+  /* ── QUOTE ── */
+  .quote-block {
+    border-left: 3px solid var(--accent);
+    padding: 1.5rem 2rem;
+    background: var(--surface);
+    border-radius: 0 1rem 1rem 0;
+    margin: 2rem 0;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.15rem;
+    font-style: italic;
+  }
+  .quote-source { font-family: 'DM Sans', sans-serif; font-style: normal; font-size: 0.75rem; color: var(--muted); margin-top: 0.75rem; }
+
+  /* ── TABLE ── */
+  .comp-table { width: 100%; border-collapse: collapse; font-size: 0.85rem; }
+  .comp-table th {
+    text-align: left; padding: 0.75rem 1rem;
+    font-size: 0.65rem; letter-spacing: 0.15em; text-transform: uppercase;
+    color: var(--muted); border-bottom: 1px solid var(--border);
+  }
+  .comp-table td { padding: 0.9rem 1rem; border-bottom: 1px solid var(--border); }
+  .comp-table tr:last-child td { border-bottom: none; }
+  .comp-table tr:hover td { background: var(--surface2); }
+  .tag {
+    display: inline-block; padding: 0.2rem 0.6rem; border-radius: 4px;
+    font-size: 0.68rem; letter-spacing: 0.05em; font-weight: 500;
+  }
+  .tag-green { background: rgba(79,209,165,0.15); color: var(--accent3); }
+  .tag-gold { background: rgba(232,201,122,0.15); color: var(--accent); }
+  .tag-purple { background: rgba(160,123,245,0.15); color: var(--accent2); }
+  .tag-red { background: rgba(240,100,100,0.15); color: var(--red); }
+
+  /* ── HIGHLIGHT BOX ── */
+  .highlight {
+    background: linear-gradient(135deg, rgba(232,201,122,0.08), rgba(160,123,245,0.08));
+    border: 1px solid rgba(232,201,122,0.2);
+    border-radius: 1rem; padding: 2.5rem;
+    margin: 2rem 0;
+  }
+  .highlight-title { font-family: 'Playfair Display', serif; font-size: 1.4rem; margin-bottom: 1rem; }
+
+  /* ── TWO COL ── */
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start; }
+  @media (max-width: 768px) {
+    .two-col { grid-template-columns: 1fr; }
+    nav { padding: 1rem; }
+    .nav-pills { display: none; }
+    .slide { padding: 5rem 1.5rem 3rem; }
+  }
+
+  /* ── ROADMAP ── */
+  .roadmap { position: relative; }
+  .roadmap::before {
+    content: ''; position: absolute; left: 20px; top: 0; bottom: 0; width: 2px;
+    background: linear-gradient(to bottom, var(--accent), var(--accent2), var(--accent3));
+  }
+  .roadmap-item { display: flex; gap: 2rem; margin-bottom: 2.5rem; position: relative; }
+  .roadmap-dot {
+    width: 42px; height: 42px; border-radius: 50%; flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 700; font-size: 0.85rem; position: relative; z-index: 1;
+  }
+  .roadmap-content { flex: 1; }
+  .roadmap-phase { font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 0.25rem; }
+  .roadmap-title { font-family: 'Playfair Display', serif; font-size: 1.2rem; margin-bottom: 0.5rem; }
+  .roadmap-text { font-size: 0.85rem; color: var(--muted); }
+
+  /* ── DECORATIVE ── */
+  .deco-line {
+    height: 1px; width: 60px; background: var(--accent);
+    margin: 1.5rem 0; display: inline-block;
+  }
+
+  /* ── FOOTER SLIDE ── */
+  #fim { text-align: center; background: radial-gradient(ellipse 80% 50% at 50% 60%, rgba(160,123,245,0.1), transparent 70%); }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .fade-up { animation: fadeUp 0.7s ease both; }
+  .delay-1 { animation-delay: 0.1s; }
+  .delay-2 { animation-delay: 0.2s; }
+  .delay-3 { animation-delay: 0.3s; }
+  .delay-4 { animation-delay: 0.4s; }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div>
+    <div class="nav-logo">WEXO</div>
+    <div class="nav-sub">Pesquisa de Reposicionamento</div>
+  </div>
+  <div class="nav-pills">
+    <a class="pill" href="#contexto">Contexto</a>
+    <a class="pill" href="#mercado">Mercado</a>
+    <a class="pill" href="#oportunidades">Oportunidades</a>
+    <a class="pill" href="#concorrencia">Concorrência</a>
+    <a class="pill" href="#posicionamento">Posicionamento</a>
+    <a class="pill" href="#roadmap">Roadmap</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="hero" class="slide">
+  <div class="slide-num">01 / 08</div>
+  <div class="hero-eyebrow fade-up">Pesquisa de Mercado · 2026</div>
+  <h1 class="hero-title fade-up delay-1">
+    Da tática à<br><em>estratégia de marca</em>
+  </h1>
+  <p class="hero-sub fade-up delay-2">
+    Análise de mercado, oportunidades e reposicionamento da Wexo como consultoria criativa de branding no Brasil.
+  </p>
+  <div class="hero-meta fade-up delay-3">
+    <div><span>R$ 29B</span>Mercado publicitário BR 2025</div>
+    <div><span>+365</span>Rebrandings só em 2024</div>
+    <div><span>77%</span>Crença no Brand-Led Growth</div>
+    <div><span>+12%</span>Crescimento do setor a/a</div>
+  </div>
+</section>
+
+<!-- CONTEXTO -->
+<section id="contexto" class="slide">
+  <div class="slide-num">02 / 08</div>
+  <div class="section-label">Diagnóstico Atual</div>
+  <h2 class="section-title">O problema<br>do imobiliário</h2>
+  <p class="section-desc">A Wexo está capturada num mercado que move muito dinheiro mas que historicamente subvaloriza comunicação estratégica — e usa a agência como fornecedora de táticas.</p>
+
+  <div class="two-col">
+    <div>
+      <div class="grid-2">
+        <div class="card accent-red">
+          <div class="card-icon">🏗️</div>
+          <div class="card-title">Mercado orientado a produto</div>
+          <div class="card-text">Incorporadoras e imobiliárias focam em m², planta e preço. Comunicação é custo, não investimento.</div>
+        </div>
+        <div class="card accent-red">
+          <div class="card-icon">📍</div>
+          <div class="card-title">Cultura de leads</div>
+          <div class="card-text">O setor vive de CPL (custo por lead). Qualidade de marca e posicionamento raramente entram na conversa.</div>
+        </div>
+        <div class="card accent-red">
+          <div class="card-icon">🔄</div>
+          <div class="card-title">Relacionamento transacional</div>
+          <div class="card-text">Contratos por lançamento, sem continuidade estratégica. A agência entra, entrega e sai.</div>
+        </div>
+        <div class="card accent-red">
+          <div class="card-icon">📉</div>
+          <div class="card-title">Teto de valor percebido</div>
+          <div class="card-text">Difícil cobrar preços premium num setor que compara agências por tabela de preço de serviço.</div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="quote-block">
+        "O rebranding é mais estratégico do que isso — ele leva a alterações de propósito de marca ou de propostas de valor. Ele impacta a essência da marca em diferentes graus."
+        <div class="quote-source">— Marcos Bedendo, Professor de Branding, ESPM-SP</div>
+      </div>
+      <div class="highlight">
+        <div class="highlight-title">O insight central</div>
+        <p style="color: var(--muted); font-size: 0.9rem;">A Wexo já tem as competências certas. O que precisa mudar é o <strong style="color:var(--text)">mercado alvo</strong> e a <strong style="color:var(--text)">narrativa de valor</strong>. Sair do "fazemos comunicação para imobiliárias" para "transformamos empresas através de marca" é uma mudança de posicionamento, não de capacidade.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MERCADO -->
+<section id="mercado" class="slide">
+  <div class="slide-num">03 / 08</div>
+  <div class="section-label">Dados de Mercado</div>
+  <h2 class="section-title">O tamanho da<br>oportunidade</h2>
+  <p class="section-desc">O mercado de branding estratégico no Brasil está em aceleração. O setor publicitário superou R$ 29 bilhões em 2025 e a demanda por posicionamento de marca cresce em todos os segmentos.</p>
+
+  <div class="grid-4" style="margin-bottom: 2.5rem;">
+    <div class="stat-block">
+      <div class="stat-num">R$ 29B</div>
+      <div class="stat-label">Mercado publicitário BR 2025</div>
+    </div>
+    <div class="stat-block">
+      <div class="stat-num">+12%</div>
+      <div class="stat-label">Crescimento a/a (2024→2025)</div>
+    </div>
+    <div class="stat-block">
+      <div class="stat-num">365+</div>
+      <div class="stat-label">Rebrandings registrados em 2024</div>
+    </div>
+    <div class="stat-block">
+      <div class="stat-num">77%</div>
+      <div class="stat-label">Profissionais creem em Brand-Led Growth (2026)</div>
+    </div>
+  </div>
+
+  <div class="section-label" style="margin-top: 2rem;">Tendências estruturais do mercado</div>
+  <div style="max-width: 640px; margin-bottom: 1rem;">
+    <div class="bar-item">
+      <div class="bar-label">
+        <span>Crença em integração Branding + Performance</span>
+        <span style="color: var(--accent)">77%</span>
+      </div>
+      <div class="bar-track"><div class="bar-fill bar-gold" style="width: 77%"></div></div>
+    </div>
+    <div class="bar-item">
+      <div class="bar-label">
+        <span>Pressão por ROI mensurável</span>
+        <span style="color: var(--accent2)">55%</span>
+      </div>
+      <div class="bar-track"><div class="bar-fill bar-purple" style="width: 55%"></div></div>
+    </div>
+    <div class="bar-item">
+      <div class="bar-label">
+        <span>Empresas com branding + perf. efetivamente alinhados</span>
+        <span style="color: var(--accent3)">37%</span>
+      </div>
+      <div class="bar-track"><div class="bar-fill bar-green" style="width: 37%"></div></div>
+    </div>
+    <div class="bar-item">
+      <div class="bar-label">
+        <span>Queda na geração de leads como prioridade (-60% em 2 anos)</span>
+        <span style="color: var(--red)">18%</span>
+      </div>
+      <div class="bar-track"><div class="bar-fill bar-red" style="width: 18%"></div></div>
+    </div>
+  </div>
+  <p style="font-size: 0.8rem; color: var(--muted);">Fonte: Conversion — Relatório Tendências de Marketing 2026 / CENP-Meios 2025</p>
+</section>
+
+<!-- OPORTUNIDADES -->
+<section id="oportunidades" class="slide">
+  <div class="slide-num">04 / 08</div>
+  <div class="section-label">Setores-Alvo</div>
+  <h2 class="section-title">Onde a Wexo<br>pode jogar grande</h2>
+  <p class="section-desc">Setores com alto crescimento e baixa maturidade de marca são o terreno ideal. Empresas que precisam se diferenciar mas ainda não sabem como.</p>
+
+  <div class="grid-3">
+    <div class="card accent-purple">
+      <div class="card-icon">🌾</div>
+      <div class="card-title">Agronegócio</div>
+      <div class="card-text">21% do PIB brasileiro. Empresas de agtech, distribuidoras e cooperativas com imenso potencial de marca e quase nenhum investimento em branding estratégico. "Agro não é setor de brand" — esse preconceito é sua janela de oportunidade.</div>
+      <div style="margin-top: 1rem;">
+        <span class="tag tag-green">Alta oportunidade</span>
+        <span class="tag tag-gold" style="margin-left: 0.5rem">B2B</span>
+      </div>
+    </div>
+    <div class="card accent-green">
+      <div class="card-icon">🏥</div>
+      <div class="card-title">Saúde & HealthTechs</div>
+      <div class="card-text">2.500+ startups de saúde no Brasil. Clínicas, operadoras, healthtechs e serviços médicos que precisam urgentemente se diferenciar. Setor com enorme demanda por confiança e marca forte.</div>
+      <div style="margin-top: 1rem;">
+        <span class="tag tag-green">Alta oportunidade</span>
+        <span class="tag tag-purple" style="margin-left: 0.5rem">B2B/B2C</span>
+      </div>
+    </div>
+    <div class="card accent-gold">
+      <div class="card-icon">⚡</div>
+      <div class="card-title">Startups & Scale-ups</div>
+      <div class="card-text">Empresas em crescimento que levantaram capital mas ainda não têm marca à altura do produto. Pré-IPO, expansão de mercado ou mudança de posicionamento — momento ideal para branding estratégico.</div>
+      <div style="margin-top: 1rem;">
+        <span class="tag tag-gold">Ticket alto</span>
+        <span class="tag tag-purple" style="margin-left: 0.5rem">B2B</span>
+      </div>
+    </div>
+    <div class="card accent-green">
+      <div class="card-icon">🏛️</div>
+      <div class="card-title">Serviços Profissionais</div>
+      <div class="card-text">Escritórios de advocacia, contabilidade, arquitetura e consultoria. Segmento maduro mas com marca antiquada. Querem se posicionar como premium sem saber como.</div>
+      <div style="margin-top: 1rem;">
+        <span class="tag tag-green">Acessível</span>
+        <span class="tag tag-gold" style="margin-left: 0.5rem">Regional</span>
+      </div>
+    </div>
+    <div class="card accent-purple">
+      <div class="card-icon">🎓</div>
+      <div class="card-title">Educação & EdTechs</div>
+      <div class="card-text">Setor em digitalização acelerada. Faculdades, cursos, plataformas e escolas que precisam se reinventar. Mercado com demanda crescente por diferenciação além do preço.</div>
+      <div style="margin-top: 1rem;">
+        <span class="tag tag-purple">Em crescimento</span>
+        <span class="tag tag-green" style="margin-left: 0.5rem">B2C</span>
+      </div>
+    </div>
+    <div class="card accent-gold">
+      <div class="card-icon">🏭</div>
+      <div class="card-title">Indústria & Manufatura</div>
+      <div class="card-text">Empresas industriais que buscam transformação digital e precisam reposicionar marca para atrair novos mercados, talentos e parceiros. Grande carência de comunicação estratégica.</div>
+      <div style="margin-top: 1rem;">
+        <span class="tag tag-gold">Ticket alto</span>
+        <span class="tag tag-red" style="margin-left: 0.5rem">Complexo</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONCORRÊNCIA -->
+<section id="concorrencia" class="slide">
+  <div class="slide-num">05 / 08</div>
+  <div class="section-label">Análise Competitiva</div>
+  <h2 class="section-title">O mapa da<br>concorrência</h2>
+  <p class="section-desc">O mercado de branding estratégico no Brasil está fragmentado. Existem poucos players bem posicionados no segmento de consultoria boutique — e menos ainda fora do eixo SP/RJ.</p>
+
+  <div style="overflow-x: auto; margin-bottom: 2.5rem;">
+    <table class="comp-table">
+      <thead>
+        <tr>
+          <th>Perfil de Concorrente</th>
+          <th>Exemplo</th>
+          <th>Foco</th>
+          <th>Fraqueza</th>
+          <th>Oportunidade p/ Wexo</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Grandes grupos</strong></td>
+          <td style="color: var(--muted)">Galeria, Publicis, Artplan</td>
+          <td><span class="tag tag-purple">Grandes contas nacionais</span></td>
+          <td style="color: var(--muted); font-size: 0.8rem">Inacessível para médias empresas</td>
+          <td><span class="tag tag-green">Não competem no seu mercado</span></td>
+        </tr>
+        <tr>
+          <td><strong>Agências de performance</strong></td>
+          <td style="color: var(--muted)">NP Digital, V4 Company</td>
+          <td><span class="tag tag-gold">Tráfego, ROI imediato</span></td>
+          <td style="color: var(--muted); font-size: 0.8rem">Não fazem branding estratégico</td>
+          <td><span class="tag tag-green">Campo aberto em estratégia de marca</span></td>
+        </tr>
+        <tr>
+          <td><strong>Consultorias de branding</strong></td>
+          <td style="color: var(--muted)">Wyse, Above, Pomar</td>
+          <td><span class="tag tag-purple">Branding boutique</span></td>
+          <td style="color: var(--muted); font-size: 0.8rem">Concentradas em SP/RJ, custo alto</td>
+          <td><span class="tag tag-gold">Regionalização + execução criativa</span></td>
+        </tr>
+        <tr>
+          <td><strong>Agências digitais locais</strong></td>
+          <td style="color: var(--muted)">Agências de cidade média</td>
+          <td><span class="tag tag-red">Social media, sites</span></td>
+          <td style="color: var(--muted); font-size: 0.8rem">Sem capacidade estratégica</td>
+          <td><span class="tag tag-green">Wexo se posiciona acima</span></td>
+        </tr>
+        <tr>
+          <td><strong>Agências especializadas luxo</strong></td>
+          <td style="color: var(--muted)">Kingmaker</td>
+          <td><span class="tag tag-gold">Alto padrão / premium</span></td>
+          <td style="color: var(--muted); font-size: 0.8rem">Nicho muito estreito</td>
+          <td><span class="tag tag-purple">Inspiração de modelo</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="highlight">
+    <div class="highlight-title">⚡ White space identificado</div>
+    <p style="color: var(--muted); font-size: 0.9rem;">Existe um gap significativo entre as grandes consultorias de branding (caras, distantes, SP-centristas) e as agências digitais locais (sem profundidade estratégica). A Wexo tem capacidade e proximidade para ocupar esse espaço — <strong style="color: var(--text)">consultoria criativa de marca com execução</strong> para empresas de médio porte em todo o Brasil.</p>
+  </div>
+</section>
+
+<!-- POSICIONAMENTO -->
+<section id="posicionamento" class="slide">
+  <div class="slide-num">06 / 08</div>
+  <div class="section-label">Proposta de Reposicionamento</div>
+  <h2 class="section-title">Como a Wexo<br>deve se apresentar</h2>
+  <p class="section-desc">O reposicionamento não é sobre mudar o que você faz — é sobre mudar quem você é para o mercado. A Wexo passa de agência de publicidade para consultoria criativa de marca.</p>
+
+  <div class="two-col">
+    <div>
+      <div class="section-label" style="color: var(--red)">❌ Posicionamento atual (a abandonar)</div>
+      <div class="card" style="margin-bottom: 1.5rem; border-color: rgba(240,100,100,0.2);">
+        <div class="card-text" style="font-size: 0.9rem; line-height: 1.8;">
+          "Agência de publicidade especializada em comunicação para o mercado imobiliário."<br><br>
+          → Reativo, tático, fornecedor<br>
+          → Preso num setor que desvaloriza comunicação<br>
+          → Concorre por preço<br>
+          → Cliente manda, agência executa
+        </div>
+      </div>
+
+      <div class="section-label" style="color: var(--accent3)">✅ Posicionamento novo (a construir)</div>
+      <div class="card accent-green">
+        <div class="card-text" style="font-size: 0.9rem; line-height: 1.8;">
+          "Consultoria criativa que transforma a marca de empresas em ativo estratégico de negócio."<br><br>
+          → Proativo, estratégico, parceiro<br>
+          → Setores que valorizam diferenciação<br>
+          → Compete por valor e resultado<br>
+          → Wexo lidera o processo
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="section-label">Pilares do novo posicionamento</div>
+      <div class="grid-2">
+        <div class="card accent-gold">
+          <div class="card-icon">🎯</div>
+          <div class="card-title">Brand Strategy</div>
+          <div class="card-text">Diagnóstico, posicionamento, arquitetura de marca e narrativa. O ponto de entrada.</div>
+        </div>
+        <div class="card accent-purple">
+          <div class="card-icon">✏️</div>
+          <div class="card-title">Identidade & Design</div>
+          <div class="card-text">Sistema visual, brandbook e aplicações. Entrega tangível de alto impacto.</div>
+        </div>
+        <div class="card accent-green">
+          <div class="card-icon">🔄</div>
+          <div class="card-title">Rebranding</div>
+          <div class="card-text">Empresas em transição, reposicionamento ou nova fase. Projeto de transformação.</div>
+        </div>
+        <div class="card accent-gold">
+          <div class="card-icon">🧭</div>
+          <div class="card-title">Consultoria Contínua</div>
+          <div class="card-text">Pós-projeto: guardião de marca, decisões de comunicação, evolução estratégica.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MODELO COMERCIAL -->
+<section id="modelo" class="slide">
+  <div class="slide-num">07 / 08</div>
+  <div class="section-label">Modelo de Negócio</div>
+  <h2 class="section-title">Da execução<br>à recorrência</h2>
+  <p class="section-desc">O grande salto da Wexo é criar um modelo onde projetos de marca geram contratos de consultoria recorrente. Alta margem, baixo churn, relacionamento de longo prazo.</p>
+
+  <div class="grid-3" style="margin-bottom: 3rem;">
+    <div class="card accent-gold">
+      <div class="card-icon">🚀</div>
+      <div class="card-title">Fase 1: Diagnóstico</div>
+      <div class="card-text">Entrada de baixo risco: workshop de posicionamento, diagnóstico de marca ou brand audit. Ticket de R$ 5k–15k. Porta de entrada que converte em projeto maior.</div>
+      <div style="margin-top: 1rem; font-size: 0.75rem; color: var(--accent);">Duração: 2–4 semanas</div>
+    </div>
+    <div class="card accent-purple">
+      <div class="card-icon">⚡</div>
+      <div class="card-title">Fase 2: Projeto de Marca</div>
+      <div class="card-text">O core: branding completo, rebranding ou posicionamento estratégico. Ticket de R$ 30k–150k dependendo do porte. Alto impacto, resultado visível.</div>
+      <div style="margin-top: 1rem; font-size: 0.75rem; color: var(--accent2);">Duração: 2–4 meses</div>
+    </div>
+    <div class="card accent-green">
+      <div class="card-icon">🔁</div>
+      <div class="card-title">Fase 3: Retainer Estratégico</div>
+      <div class="card-text">Pós-projeto: consultoria mensal como guardião de marca. Ticket de R$ 3k–8k/mês. Recorrente, previsível, escalável — o modelo que muda a Wexo.</div>
+      <div style="margin-top: 1rem; font-size: 0.75rem; color: var(--accent3);">Recorrente: 12–36 meses</div>
+    </div>
+  </div>
+
+  <div class="highlight">
+    <div class="highlight-title">💡 Diferencial competitivo único</div>
+    <div class="grid-2" style="margin-top: 1.5rem;">
+      <div>
+        <div style="font-size: 0.8rem; color: var(--muted); margin-bottom: 0.5rem;">O que poucas agências oferecem:</div>
+        <ul style="list-style: none; font-size: 0.9rem; line-height: 2;">
+          <li>✅ Estratégia de marca + execução criativa no mesmo lugar</li>
+          <li>✅ Conhecimento de setores tradicionais (vindo do imobiliário)</li>
+          <li>✅ Presença regional fora do eixo SP/RJ</li>
+          <li>✅ Modelo consultivo (não apenas agência)</li>
+        </ul>
+      </div>
+      <div>
+        <div style="font-size: 0.8rem; color: var(--muted); margin-bottom: 0.5rem;">Prova de capacidade:</div>
+        <ul style="list-style: none; font-size: 0.9rem; line-height: 2;">
+          <li>📌 Fazer o próprio rebranding da Wexo primeiro</li>
+          <li>📌 Criar cases de setores-alvo (pró bono estratégico)</li>
+          <li>📌 Publicar ponto de vista sobre marca e negócio</li>
+          <li>📌 Posicionar sócios como especialistas</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ROADMAP -->
+<section id="roadmap" class="slide">
+  <div class="slide-num">08 / 08</div>
+  <div class="section-label">Próximos Passos</div>
+  <h2 class="section-title">Roadmap de<br>reposicionamento</h2>
+  <p class="section-desc">Uma transição estruturada que não abandona o imobiliário de uma vez, mas abre as portas para o novo posicionamento em paralelo.</p>
+
+  <div class="two-col">
+    <div class="roadmap">
+      <div class="roadmap-item">
+        <div class="roadmap-dot" style="background: rgba(232,201,122,0.2); color: var(--accent); border: 2px solid var(--accent);">1</div>
+        <div class="roadmap-content">
+          <div class="roadmap-phase" style="color: var(--accent)">Mês 1–2 · Fundação</div>
+          <div class="roadmap-title">Rebrand da própria Wexo</div>
+          <div class="roadmap-text">Novo posicionamento, nome/submarca se necessário, site, discurso de vendas. Você precisa ser o case #1 do novo modelo.</div>
+        </div>
+      </div>
+      <div class="roadmap-item">
+        <div class="roadmap-dot" style="background: rgba(160,123,245,0.2); color: var(--accent2); border: 2px solid var(--accent2);">2</div>
+        <div class="roadmap-content">
+          <div class="roadmap-phase" style="color: var(--accent2)">Mês 2–4 · Validação</div>
+          <div class="roadmap-title">1 ou 2 projetos piloto em novos setores</div>
+          <div class="roadmap-text">Selecionar 1–2 clientes de setores-alvo (agro, saúde, serviços) para fazer projetos de marca completos. Podem ser com desconto. O objetivo é case e prova de conceito.</div>
+        </div>
+      </div>
+      <div class="roadmap-item">
+        <div class="roadmap-dot" style="background: rgba(79,209,165,0.2); color: var(--accent3); border: 2px solid var(--accent3);">3</div>
+        <div class="roadmap-content">
+          <div class="roadmap-phase" style="color: var(--accent3)">Mês 3–6 · Autoridade</div>
+          <div class="roadmap-title">Construção de conteúdo e marca pessoal</div>
+          <div class="roadmap-text">LinkedIn, artigos, palestras, podcast. Os sócios precisam ser vistos como especialistas em posicionamento de marca — não como donos de agência.</div>
+        </div>
+      </div>
+      <div class="roadmap-item">
+        <div class="roadmap-dot" style="background: rgba(232,201,122,0.15); color: var(--accent); border: 2px solid rgba(232,201,122,0.4);">4</div>
+        <div class="roadmap-content">
+          <div class="roadmap-phase" style="color: var(--muted)">Mês 6–12 · Escala</div>
+          <div class="roadmap-title">Pipeline novo + transição gradual do imobiliário</div>
+          <div class="roadmap-text">Com 2–3 cases e autoridade construída, iniciar processo de seleção de clientes: renovar contratos imobiliários só para quem aceita projeto estratégico, não apenas operacional.</div>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div class="section-label">Métricas de sucesso</div>
+      <div class="card" style="margin-bottom: 1rem;">
+        <div class="bar-item" style="margin-bottom: 0.5rem;">
+          <div class="bar-label"><span>% receita de projetos estratégicos</span><span style="color:var(--accent)">meta: 50%</span></div>
+          <div class="bar-track"><div class="bar-fill bar-gold" style="width: 15%"></div></div>
+        </div>
+        <div class="bar-item" style="margin-bottom: 0.5rem;">
+          <div class="bar-label"><span>Retainers ativos (meta: 5 em 12 meses)</span><span style="color:var(--accent2)">0 → 5</span></div>
+          <div class="bar-track"><div class="bar-fill bar-purple" style="width: 0%"></div></div>
+        </div>
+        <div class="bar-item">
+          <div class="bar-label"><span>Ticket médio por projeto</span><span style="color:var(--accent3)">meta: R$50k+</span></div>
+          <div class="bar-track"><div class="bar-fill bar-green" style="width: 20%"></div></div>
+        </div>
+      </div>
+
+      <div class="card accent-gold">
+        <div class="card-icon">🏆</div>
+        <div class="card-title">Posição a ocupar em 18 meses</div>
+        <div class="card-text">"A consultoria de marca que empresas de médio porte fora do eixo SP/RJ escolhem quando querem sair do commoditizado e construir algo que dure."</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FIM -->
+<section id="fim" class="slide">
+  <div class="hero-eyebrow" style="display: inline-block; margin-bottom: 2rem;">Wexo · 2026</div>
+  <h2 class="section-title" style="text-align: center; max-width: 700px; margin: 0 auto 1.5rem;">
+    A marca que você ainda vai construir<br><em style="font-style: italic; color: var(--accent)">é a sua</em>
+  </h2>
+  <p style="text-align: center; color: var(--muted); max-width: 480px; margin: 0 auto 3rem; font-size: 0.95rem;">
+    O maior projeto de branding da Wexo começa dentro de casa. Quando a agência viver o que prega, o mercado vai notar.
+  </p>
+  <div class="deco-line" style="margin: 0 auto; display: block;"></div>
+  <p style="text-align: center; margin-top: 2rem; font-size: 0.7rem; color: var(--muted); letter-spacing: 0.2em; text-transform: uppercase;">
+    Pesquisa gerada por Claude · Anthropic · Abril 2026
+  </p>
+</section>
+
+<script>
+  // Animate bars on scroll
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.querySelectorAll('.bar-fill').forEach(b => {
+          const w = b.style.width;
+          b.style.width = '0';
+          setTimeout(() => b.style.width = w, 100);
+        });
+      }
+    });
+  }, { threshold: 0.3 });
+  document.querySelectorAll('.slide').forEach(s => observer.observe(s));
+</script>
+</body>
+</html>

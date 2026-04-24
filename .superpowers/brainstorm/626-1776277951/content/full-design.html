@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Design — Página de Contato Wexo</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: #0D0D0F;
+    color: #F2EDE4;
+    font-family: "DM Sans", system-ui, sans-serif;
+    padding: 32px 16px;
+  }
+
+  .preview-label {
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #555;
+    margin-bottom: 24px;
+    text-align: center;
+  }
+
+  /* PAGE MOCKUP */
+  .page {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 60px 40px;
+    background: #0D0D0F;
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 16px;
+  }
+
+  /* HERO */
+  .hero {
+    text-align: center;
+    margin-bottom: 52px;
+  }
+  .hero-tag {
+    font-size: 11px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: #24506D;
+    margin-bottom: 16px;
+  }
+  .hero-title {
+    font-family: "Montserrat", system-ui, sans-serif;
+    font-size: 52px;
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 20px;
+  }
+  .hero-title em {
+    font-style: italic;
+    color: #24506D;
+  }
+  .hero-sub {
+    font-size: 16px;
+    color: #888;
+    max-width: 500px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+
+  /* CHANNELS */
+  .channels {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 40px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .channel-card {
+    background: #13131A;
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 14px;
+    padding: 22px 24px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    cursor: pointer;
+    transition: border-color 0.2s, transform 0.2s;
+    text-decoration: none;
+    color: #F2EDE4;
+  }
+  .channel-card:hover {
+    border-color: rgba(255,255,255,0.2);
+    transform: translateY(-2px);
+  }
+  .channel-icon {
+    width: 42px;
+    height: 42px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    flex-shrink: 0;
+    background: rgba(255,255,255,0.05);
+  }
+  .channel-info h3 {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 3px;
+  }
+  .channel-info p {
+    font-size: 11px;
+    color: #666;
+  }
+  .channel-arrow {
+    margin-left: auto;
+    color: #24506D;
+    font-size: 18px;
+    flex-shrink: 0;
+  }
+
+  /* DIVIDER */
+  .divider {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    max-width: 600px;
+    margin: 0 auto 36px;
+  }
+  .divider-line {
+    flex: 1;
+    height: 1px;
+    background: rgba(255,255,255,0.07);
+  }
+  .divider-text {
+    font-size: 11px;
+    color: #555;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    white-space: nowrap;
+  }
+
+  /* FORM */
+  .form-wrap {
+    max-width: 600px;
+    margin: 0 auto;
+    background: #13131A;
+    border: 1px solid rgba(255,255,255,0.05);
+    border-radius: 16px;
+    padding: 36px 40px;
+  }
+  .form-title {
+    font-size: 13px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #555;
+    margin-bottom: 24px;
+  }
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    margin-bottom: 14px;
+  }
+  .form-field {
+    margin-bottom: 14px;
+  }
+  .form-label {
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #555;
+    display: block;
+    margin-bottom: 8px;
+  }
+  .form-input {
+    width: 100%;
+    background: #0D0D0F;
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 8px;
+    padding: 12px 14px;
+    color: #F2EDE4;
+    font-size: 14px;
+  }
+  .form-input.optional {
+    border-style: dashed;
+  }
+  .form-textarea {
+    width: 100%;
+    background: #0D0D0F;
+    border: 1px dashed rgba(255,255,255,0.08);
+    border-radius: 8px;
+    padding: 12px 14px;
+    color: #666;
+    font-size: 14px;
+    height: 90px;
+    resize: none;
+  }
+  .optional-badge {
+    font-size: 9px;
+    color: #444;
+    margin-left: 6px;
+    letter-spacing: 0.1em;
+  }
+  .form-btn {
+    width: 100%;
+    background: #24506D;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 14px;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    cursor: pointer;
+    margin-top: 8px;
+  }
+
+  /* BOTTOM INFO */
+  .bottom-info {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 52px;
+    padding-top: 36px;
+    border-top: 1px solid rgba(255,255,255,0.05);
+  }
+  .info-item h4 {
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #555;
+    margin-bottom: 6px;
+  }
+  .info-item p, .info-item a {
+    font-size: 13px;
+    color: #F2EDE4;
+    text-decoration: none;
+  }
+
+  /* ANNOTATIONS */
+  .annotations {
+    max-width: 900px;
+    margin: 32px auto 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+  .note {
+    background: #13131A;
+    border-left: 2px solid #24506D;
+    border-radius: 0 8px 8px 0;
+    padding: 12px 16px;
+  }
+  .note-title { font-size: 11px; font-weight: 600; margin-bottom: 4px; color: #F2EDE4; }
+  .note-body { font-size: 11px; color: #666; line-height: 1.5; }
+</style>
+</head>
+<body>
+
+<p class="preview-label">Mockup — Página de Contato Wexo (redesign)</p>
+
+<div class="page">
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-tag">Wexo · Consultoria de Marca</div>
+    <h1 class="hero-title">Vamos <em>começar.</em></h1>
+    <p class="hero-sub">Sem apresentação formal, sem compromisso. Se você sentiu que sua marca pode mais, é aqui que começa a conversa.</p>
+  </div>
+
+  <!-- CHANNELS -->
+  <div class="channels">
+    <a class="channel-card" href="#">
+      <div class="channel-icon">💬</div>
+      <div class="channel-info">
+        <h3>WhatsApp</h3>
+        <p>Resposta rápida, sem enrolação</p>
+      </div>
+      <span class="channel-arrow">→</span>
+    </a>
+    <a class="channel-card" href="#">
+      <div class="channel-icon">📷</div>
+      <div class="channel-info">
+        <h3>Instagram</h3>
+        <p>Acompanha nosso trabalho</p>
+      </div>
+      <span class="channel-arrow">→</span>
+    </a>
+  </div>
+
+  <!-- DIVIDER -->
+  <div class="divider">
+    <div class="divider-line"></div>
+    <span class="divider-text">ou prefere deixar seus dados</span>
+    <div class="divider-line"></div>
+  </div>
+
+  <!-- FORM -->
+  <div class="form-wrap">
+    <p class="form-title">Formulário de contato</p>
+    <div class="form-row">
+      <div>
+        <label class="form-label">Nome</label>
+        <div class="form-input" style="color:#555">Seu nome</div>
+      </div>
+      <div>
+        <label class="form-label">E-mail ou WhatsApp</label>
+        <div class="form-input" style="color:#555">Como a gente te encontra</div>
+      </div>
+    </div>
+    <div class="form-field">
+      <label class="form-label">Sobre o projeto <span class="optional-badge">opcional</span></label>
+      <div class="form-textarea">Me conta um pouco do momento da sua empresa... (sem compromisso, pode ser curto)</div>
+    </div>
+    <div class="form-btn">Enviar</div>
+  </div>
+
+  <!-- BOTTOM INFO -->
+  <div class="bottom-info">
+    <div class="info-item">
+      <h4>Email Direto</h4>
+      <a href="#">contato@wexo.com.br</a>
+    </div>
+    <div class="info-item">
+      <h4>Localização</h4>
+      <p>Trend City Center · Porto Alegre</p>
+    </div>
+  </div>
+</div>
+
+<!-- ANNOTATIONS -->
+<div class="annotations">
+  <div class="note">
+    <div class="note-title">Headline preservada</div>
+    <div class="note-body">"Vamos começar." continua — é forte e direto. A subline nova reforça o "sem compromisso".</div>
+  </div>
+  <div class="note">
+    <div class="note-title">Canais em destaque</div>
+    <div class="note-body">WhatsApp (+55 51 8161-0066) e Instagram (@wexocreative) como CTAs primários, estilo dark Wexo.</div>
+  </div>
+  <div class="note">
+    <div class="note-title">Formulário simplificado</div>
+    <div class="note-body">3 campos: Nome, E-mail ou WhatsApp, e Sobre o Projeto (opcional, borda tracejada para sinalizar que é livre).</div>
+  </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,167 @@
+{
+  "Intro": {
+    "loading": "Chargement",
+    "tagline": "Agence Créative",
+    "quotes": [
+      { "text": "Une marque n'est pas ce que vous dites qu'elle est. C'est ce qu'ils disent qu'elle est.", "author": "Marty Neumeier" },
+      { "text": "Si ça ne vend pas, ce n'est pas créatif.", "author": "David Ogilvy" },
+      { "text": "Le design est l'ambassadeur silencieux de votre marque.", "author": "Paul Rand" },
+      { "text": "Les produits sont fabriqués en usine, mais les marques se créent dans l'esprit.", "author": "Walter Landor" },
+      { "text": "Personne ne lit la publicité. Les gens lisent ce qui les intéresse. Parfois c'est une pub.", "author": "Howard Gossage" },
+      { "text": "Si votre publicité passe inaperçue, tout le reste est académique.", "author": "Bill Bernbach" },
+      { "text": "Votre marque, c'est ce que les gens disent de vous quand vous n'êtes pas dans la pièce.", "author": "Jeff Bezos" }
+    ]
+  },
+  "Index": {
+    "title": "Wexo | Les marques qui animent les affaires"
+  },
+  "Header": {
+    "about": "À propos",
+    "services": "Services",
+    "cases": "Cases",
+    "contact": "Contact",
+    "home": "Accueil",
+    "menu": "Menu",
+    "close": "Fermer"
+  },
+  "Cases": {
+    "hintTitle": "Cliquez et faites glisser",
+    "hintSubtitle": "Pour explorer notre univers de cas",
+    "hudTitlePrefix": "Nos",
+    "hudTitleAccent": "transformations",
+    "hudSubtitle": "Faites glisser pour explorer la carte",
+    "ctaTop": "Vous avez aimé ce que vous avez vu ?",
+    "ctaTitle": "Votre marque mérite d'être ici",
+    "ctaButton": "Transformez votre marque avec nous"
+  },
+  "Home": {
+    "heroLine1": "Marques",
+    "heroLine2": "qui transforment",
+    "heroLine3": "les entreprises.",
+    "heroSub": "Wexo est un cabinet de conseil créatif en marque. Nous travaillons avec des entreprises qui veulent arrêter de concourir sur le prix.",
+    "heroCta": "Découvrez Wexo",
+    "manifestoCta": "Voir nos cas",
+    "manifestoLine1": "De nombreuses entreprises",
+    "manifestoLine2": "confondent communication",
+    "manifestoLine3With": "avec",
+    "manifestoLine3Brand": "marque.",
+    "manifestoItalic": "La communication est ce que vous dites.",
+    "manifestoLine4": "La marque est ce que les gens ressentent",
+    "manifestoLine5": "quand vous arrêtez de parler.",
+    "manifestoCaption": "Nous travaillons pour des entreprises qui ont compris que la marque est l'actif le plus précieux — et qui n'y ont pas encore investi comme elle le mérite.",
+    "manifestoStat": "Seulement 37% des professionnels parviennent à intégrer branding et performance en pratique. Nous aidons les entreprises à entrer dans cette statistique.",
+    "pilaresLabel": "Nos Piliers",
+    "pilaresHeading": "Ce que nous livrons",
+    "pillar1Title": "Brand Strategy",
+    "pillar1Desc": "Diagnostic, positionnement et récit de marque. La base pour toute entreprise souhaitant se différencier de la concurrence en profondeur.",
+    "pillar2Title": "Identité Visuelle",
+    "pillar2Desc": "Système visuel complet, conçu pour communiquer votre positionnement avant qu'un seul mot ne soit lu ou prononcé.",
+    "pillar3Title": "Rebranding",
+    "pillar3Desc": "La transformation brutale et poétique d'une entreprise mature pour embrasser sa prochaine phase d'expansion.",
+    "pillar4Title": "Conseil en Marque",
+    "pillar4Desc": "Partenariat organique à long terme. Nous exécutons et défendons les racines de votre marque au fil des années, soutenant la croissance.",
+    "ecosystemLabel": "Notre Écosystème",
+    "ecosystemHeading": "Marques accompagnées",
+    "ecosystemLink": "Voir nos cas →",
+    "statYears": "d'expertise sur le marché",
+    "statProjects": "projets de marque réalisés",
+    "statSectors": "secteurs servis avec excellence",
+    "ctaHeading": "Votre entreprise est-elle prête pour une marque qui",
+    "ctaAccent": "travaille pour vous ?",
+    "ctaButton": "Démarrer la Transformation",
+    "ctaLink": "En savoir plus sur Wexo"
+  },
+  "About": {
+    "label": "Qui nous sommes",
+    "headline1": "Un cabinet conseil créatif",
+    "headline2": "construit pour des entreprises",
+    "headline3": "qui ont grandi au-delà de l'évident.",
+    "body1": "Wexo est né du marché immobilier — l'un des plus exigeants du Brésil en termes de rapidité et de résultats. Ce que nous y avons appris : la marque compte bien plus que le secteur ne le croit.",
+    "body2": "Aujourd'hui, nous portons cette conviction aux entreprises de tous secteurs qui veulent cesser de se battre pour l'attention et commencer à la mériter.",
+    "stat1Label": "ans en communication",
+    "stat2Label": "marques créées",
+    "stat3Label": "landing pages créées",
+    "leadershipSection": "Notre Direction",
+    "memberIndexLabel": "Notre Direction",
+    "member1Title": "Associé Directeur",
+    "member1Bio": "+20 ans de communication, avec des projets développés dans les principales agences du Brésil, servant des marques internationales comme Samsung, GM, Embraer, Bradesco, Terra, entre autres. Spécialiste en gestion de projets et d'équipes, développement digital et leadership créatif. Lauréat Or et Argent au Wave Festival.",
+    "member1Tags": ["stratégie", "affaires", "digital", "dev", "ia", "trafic payant", "seo", "intégrations", "planification", "réseaux sociaux", "vidéo"],
+    "member2Title": "Associé Directeur",
+    "member2Bio": "+30 ans de Branding de projets avec +500 marques créées pour de grands acteurs du marché, spécialiste en Branding et Création, responsable de la production de matériaux pour les lancements, salons, événements et communication externe.",
+    "member2Tags": ["branding", "design", "marques", "rebranding", "positionnement", "stratégie", "relation client", "relations", "production"],
+    "valuesLabel": "Ce en quoi nous croyons",
+    "value1": "La marque n'est pas une identité visuelle. C'est la différence entre être <accent>choisie</accent> et être <strike>comparée</strike>.",
+    "value2": "La plupart des entreprises n'ont pas besoin de <strike>plus</strike> de communication. Elles ont besoin d'une communication <accent>plus précise</accent>.",
+    "value3": "Une agence qui ne contredit jamais ses clients n'est pas un partenaire. C'est un <accent>fournisseur</accent>.",
+    "ctaLabel": "Prochaine étape",
+    "ctaHeading": "Construisons quelque chose qui",
+    "ctaAccent": "mérite d'être rappelé",
+    "ctaButton": "Parler à Wexo"
+  },
+  "Services": {
+    "heading": "Nos Services",
+    "subtitle": "Des solutions complètes pour positionner, concevoir et gérer des marques que les gens ne peuvent pas ignorer.",
+    "serviceLabel": "SERVICE",
+    "forWhom": "Pour Qui",
+    "includes": "Ce qui est inclus",
+    "deliverables": "Livrables",
+    "cta": "Parler de ce service",
+    "items": [
+      {
+        "titulo": "Brand Strategy",
+        "para": "Pour les entreprises qui ne savent pas encore comment se différencier — ou qui le savent, mais ne parviennent pas à le communiquer.",
+        "inclui": ["Diagnostic de marque (atelier d'immersion)", "Définition du positionnement", "Architecture de message", "Récit de marque (brand story)"],
+        "entrega": "Brand Deck + Brand Book stratégique"
+      },
+      {
+        "titulo": "Identité Visuelle",
+        "para": "Pour les marques qui ont une stratégie solide mais un visuel qui ne correspond pas à la promesse de valeur.",
+        "inclui": ["Logo et système de symboles", "Palette de couleurs et typographie institutionnelle", "Direction artistique et style photographique", "Applications de marque (papeterie, digital)"],
+        "entrega": "Manuel d'Identité Visuelle + Assets"
+      },
+      {
+        "titulo": "Rebranding",
+        "para": "Pour les entreprises à un point d'inflexion : fusions, nouvelle génération, changement de cible ou expansion.",
+        "inclui": ["Audit de la marque actuelle", "Repositionnement stratégique complet", "Nouvelle Identité Visuelle", "Stratégie de Lancement (Rollout)"],
+        "entrega": "Plan de Transition + Brand Book Complet"
+      },
+      {
+        "titulo": "Conseil Continu",
+        "para": "Pour les clients qui ont déjà la fondation et ont besoin d'un partenaire stratégique continu pour faire évoluer la marque.",
+        "inclui": ["Suivi des KPI de marque", "Campagnes de brand awareness", "Design system evolution", "Employer branding"],
+        "entrega": "Retainer Mensuel de Conseil"
+      }
+    ]
+  },
+  "Contact": {
+    "badge": "Wexo · Conseil en Marque",
+    "heading1": "Allons",
+    "heading2": "commencer.",
+    "body": "Sans présentation formelle, sans engagement. Si vous avez senti que votre marque peut faire plus, c'est ici que la conversation commence.",
+    "whatsappSub": "Réponse rapide, sans chichis",
+    "instagramSub": "Suivez notre travail",
+    "divider": "ou préférez laisser vos coordonnées",
+    "nameLabel": "Nom",
+    "namePlaceholder": "Votre nom",
+    "contactLabel": "Email ou WhatsApp",
+    "contactPlaceholder": "Comment nous pouvons vous contacter",
+    "projectLabel": "Sur le projet",
+    "projectOptional": "optionnel",
+    "projectPlaceholder": "Dites-nous où en est votre entreprise... ça peut être bref.",
+    "submit": "Envoyer",
+    "emailLabel": "Email Direct",
+    "locationLabel": "Localisation",
+    "location": "Trend City Center · Porto Alegre, RS"
+  },
+  "Footer": {
+    "nav1": "Wexo",
+    "about": "À propos du cabinet",
+    "services": "Ce que nous faisons",
+    "cases": "Nos Cas",
+    "nav2": "Contact",
+    "startProject": "Démarrer un projet",
+    "nav3": "Réseaux",
+    "copyright": "Tous droits réservés.",
+    "brand": "Marque créée par Wexo elle-même"
+  }
+}

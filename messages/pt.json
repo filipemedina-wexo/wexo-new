@@ -1,0 +1,167 @@
+{
+  "Intro": {
+    "loading": "Carregando",
+    "tagline": "Agência Criativa",
+    "quotes": [
+      { "text": "Uma marca não é o que você diz que ela é. É o que as pessoas dizem que ela é.", "author": "Marty Neumeier" },
+      { "text": "Se não vende, não é criativo.", "author": "David Ogilvy" },
+      { "text": "O design é o embaixador silencioso da sua marca.", "author": "Paul Rand" },
+      { "text": "Produtos são fabricados nas fábricas, mas marcas são criadas na mente.", "author": "Walter Landor" },
+      { "text": "Ninguém lê publicidade. As pessoas leem o que as interessa. Às vezes é um anúncio.", "author": "Howard Gossage" },
+      { "text": "Se a sua publicidade passa despercebida, todo o resto é acadêmico.", "author": "Bill Bernbach" },
+      { "text": "Sua marca é o que as pessoas dizem sobre você quando você não está na sala.", "author": "Jeff Bezos" }
+    ]
+  },
+  "Index": {
+    "title": "Wexo | Marcas que movem negócios"
+  },
+  "Header": {
+    "about": "Sobre",
+    "services": "Serviços",
+    "cases": "Cases",
+    "contact": "Contato",
+    "home": "Home",
+    "menu": "Menu",
+    "close": "Fechar"
+  },
+  "Cases": {
+    "hintTitle": "Clique e arraste",
+    "hintSubtitle": "Para explorar nosso universo de cases",
+    "hudTitlePrefix": "Nossas",
+    "hudTitleAccent": "transformações",
+    "hudSubtitle": "Arraste para explorar o mapa",
+    "ctaTop": "Gostou do que viu?",
+    "ctaTitle": "Sua marca merece estar aqui",
+    "ctaButton": "Transforme sua marca com a gente"
+  },
+  "Home": {
+    "heroLine1": "Marcas",
+    "heroLine2": "que transformam",
+    "heroLine3": "negócios.",
+    "heroSub": "A Wexo é uma consultoria criativa de marca. Trabalhamos com empresas que querem parar de competir por preço.",
+    "heroCta": "Conheça a Wexo",
+    "manifestoCta": "Ver nossos cases",
+    "manifestoLine1": "Muitas empresas",
+    "manifestoLine2": "confundem comunicação",
+    "manifestoLine3With": "com",
+    "manifestoLine3Brand": "marca.",
+    "manifestoItalic": "Comunicação é o que você diz.",
+    "manifestoLine4": "Marca é o que as pessoas sentem",
+    "manifestoLine5": "quando você para de falar.",
+    "manifestoCaption": "Trabalhamos para empresas que entenderam que brand é o ativo mais valioso que existe — e que ainda não investiram nele como merecem.",
+    "manifestoStat": "Apenas 37% dos profissionais conseguem integrar branding e performance na prática. Nós ajudamos empresas a entrar nessa estatística.",
+    "pilaresLabel": "Nossos Pilares",
+    "pilaresHeading": "O que entregamos",
+    "pillar1Title": "Brand Strategy",
+    "pillar1Desc": "Diagnóstico, posicionamento e narrativa de marca. A base para qualquer empresa se diferenciar da concorrência com profundidade.",
+    "pillar2Title": "Identidade Visual",
+    "pillar2Desc": "Sistema visual completo, pensado para comunicar o seu posicionamento antes de qualquer palavra ser lida ou dita.",
+    "pillar3Title": "Rebranding",
+    "pillar3Desc": "A transformação brutal e poética de uma empresa madura para abraçar sua próxima fase de expansão mercadológica.",
+    "pillar4Title": "Consultoria de Marca",
+    "pillar4Desc": "Parceria orgânica de longo prazo. Executamos e defendemos as raízes do seu brand ao longo dos anos suportando o crescimento.",
+    "ecosystemLabel": "Nosso Ecossistema",
+    "ecosystemHeading": "Marcas atendidas",
+    "ecosystemLink": "Ver nossos cases →",
+    "statYears": "de expertise de mercado",
+    "statProjects": "projetos de marca concluídos",
+    "statSectors": "atendidos com excelência",
+    "ctaHeading": "Sua empresa está pronta para uma marca que",
+    "ctaAccent": "trabalha por você?",
+    "ctaButton": "Iniciar Transformação",
+    "ctaLink": "Conheça mais sobre a Wexo"
+  },
+  "About": {
+    "label": "Quem somos",
+    "headline1": "Uma consultoria criativa",
+    "headline2": "construída para empresas",
+    "headline3": "que cresceram além do óbvio.",
+    "body1": "A Wexo nasceu do mercado imobiliário — um dos mais exigentes do Brasil em velocidade e resultados. O que aprendemos lá: marca importa muito mais do que o setor acredita.",
+    "body2": "Hoje carregamos essa convicção para empresas de qualquer segmento que querem parar de disputar atenção e começar a merecê-la.",
+    "stat1Label": "anos de comunicação",
+    "stat2Label": "marcas criadas",
+    "stat3Label": "landing pages criadas",
+    "leadershipSection": "Nossa Liderança",
+    "memberIndexLabel": "Nossa Liderança",
+    "member1Title": "Sócio Diretor",
+    "member1Bio": "+20 anos de comunicação, com projetos desenvolvidos nas principais agências do Brasil, com atendimento a marcas internacionais como Samsung, GM, Embraer, Bradesco, Terra, entre outras. Especialista em gestão de projetos e equipes, desenvolvimento digital e liderança criativa. Vencedor Ouro e Prata no Wave Festival.",
+    "member1Tags": ["estratégia", "negócios", "digital", "dev", "ia", "tráfego pago", "seo", "integrações", "planejamento", "social media", "vídeo"],
+    "member2Title": "Sócio Diretor",
+    "member2Bio": "+30 anos de Branding de projetos com +500 marcas criadas para grandes players de mercado, especialista em Branding e Criação, responsável pela produção de materiais para lançamentos, feiras, eventos e divulgação externa.",
+    "member2Tags": ["branding", "design", "marcas", "rebranding", "posicionamento", "estratégia", "atendimento", "relacionamento", "produção"],
+    "valuesLabel": "Em que acreditamos",
+    "value1": "Marca não é identidade visual. É a diferença entre ser <accent>escolhido</accent> e ser <strike>comparado</strike>.",
+    "value2": "A maioria das empresas não precisa de <strike>mais</strike> comunicação. Precisa de comunicação <accent>mais precisa</accent>.",
+    "value3": "Agência que não discorda do cliente não é parceira. É <accent>fornecedora</accent>.",
+    "ctaLabel": "Próximo passo",
+    "ctaHeading": "Vamos construir algo que",
+    "ctaAccent": "merece ser lembrado",
+    "ctaButton": "Falar com a Wexo"
+  },
+  "Services": {
+    "heading": "Nossos Serviços",
+    "subtitle": "Soluções completas para posicionar, desenhar e gerenciar marcas que as pessoas não conseguem ignorar.",
+    "serviceLabel": "SERVIÇO",
+    "forWhom": "Para Quem",
+    "includes": "O que inclui",
+    "deliverables": "Entregáveis",
+    "cta": "Falar sobre esse serviço",
+    "items": [
+      {
+        "titulo": "Brand Strategy",
+        "para": "Para empresas que ainda não sabem como se diferenciar — ou que sabem, mas não conseguem comunicar.",
+        "inclui": ["Diagnóstico de marca (workshop de imersão)", "Definição de posicionamento", "Arquitetura de mensagem", "Narrativa de marca (brand story)"],
+        "entrega": "Brand Deck + Brand Book estratégico"
+      },
+      {
+        "titulo": "Identidade Visual",
+        "para": "Para marcas que têm uma estratégia forte mas um visual que não acompanha a promessa de valor.",
+        "inclui": ["Logotipo e sistema de símbolos", "Paleta de cores e tipografia institucional", "Direção de arte e estilo fotográfico", "Aplicações de marca (papelaria, digital)"],
+        "entrega": "Manual de Identidade Visual + Assets"
+      },
+      {
+        "titulo": "Rebranding",
+        "para": "Para empresas em momento de inflexão: fusões, nova geração, mudança de público alvo ou expansão.",
+        "inclui": ["Auditoria da marca atual", "Reposicionamento estratégico completo", "Nova Identidade Visual", "Estratégia de Lançamento (Rollout)"],
+        "entrega": "Plano de Transição + Brand Book Completo"
+      },
+      {
+        "titulo": "Consultoria Contínua",
+        "para": "Para clientes que já têm a fundação e precisam de um parceiro estratégico contínuo para evoluir a marca.",
+        "inclui": ["Acompanhamento de KPIs de marca", "Campanhas de brand awareness", "Design system evolution", "Employer branding"],
+        "entrega": "Retainer Mensal de Consultoria"
+      }
+    ]
+  },
+  "Contact": {
+    "badge": "Wexo · Consultoria de Marca",
+    "heading1": "Vamos",
+    "heading2": "começar.",
+    "body": "Sem apresentação formal, sem compromisso. Se você sentiu que sua marca pode mais, é aqui que começa a conversa.",
+    "whatsappSub": "Resposta rápida, sem enrolação",
+    "instagramSub": "Acompanha nosso trabalho",
+    "divider": "ou prefere deixar seus dados",
+    "nameLabel": "Nome",
+    "namePlaceholder": "Seu nome",
+    "contactLabel": "E-mail ou WhatsApp",
+    "contactPlaceholder": "Como a gente te encontra",
+    "projectLabel": "Sobre o projeto",
+    "projectOptional": "opcional",
+    "projectPlaceholder": "Me conta um pouco do momento da sua empresa... pode ser curto.",
+    "submit": "Enviar",
+    "emailLabel": "Email Direto",
+    "locationLabel": "Localização",
+    "location": "Trend City Center · Porto Alegre, RS"
+  },
+  "Footer": {
+    "nav1": "Wexo",
+    "about": "Sobre a Consultoria",
+    "services": "O que fazemos",
+    "cases": "Nossos Cases",
+    "nav2": "Contato",
+    "startProject": "Iniciar um projeto",
+    "nav3": "Redes",
+    "copyright": "Todos os direitos reservados.",
+    "brand": "Marca criada pela própria Wexo"
+  }
+}

@@ -1,0 +1,32 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-bg: #0D0D0F;
+  --color-brand-surface: #13131A;
+  --color-brand-cream: #F2EDE4;
+  --color-brand-accent: #24506D;
+  --color-brand-link: #C8913A; /* kept gold for links maybe? Or maybe #24506D as well */
+  --font-display: var(--font-display, "Montserrat", sans-serif);
+  --font-body: var(--font-body, "DM Sans", sans-serif);
+}
+
+@layer base {
+  :root {
+    --bg: #0D0D0F;
+    --surface: #13131A;
+    --text: #F2EDE4;
+    --accent: #24506D;
+  }
+  
+  html, body {
+    background-color: var(--bg);
+    color: var(--text);
+    font-family: var(--font-body);
+  }
+
+  /* Custom Selection */
+  ::selection {
+    background-color: var(--accent);
+    color: #fff;
+  }
+}

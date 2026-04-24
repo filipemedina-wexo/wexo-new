@@ -1,0 +1,167 @@
+{
+  "Intro": {
+    "loading": "Loading",
+    "tagline": "Creative Agency",
+    "quotes": [
+      { "text": "A brand is not what you say it is. It's what they say it is.", "author": "Marty Neumeier" },
+      { "text": "If it doesn't sell, it isn't creative.", "author": "David Ogilvy" },
+      { "text": "Design is the silent ambassador of your brand.", "author": "Paul Rand" },
+      { "text": "Products are made in the factory, but brands are created in the mind.", "author": "Walter Landor" },
+      { "text": "Nobody reads advertising. People read what interests them. Sometimes it's an ad.", "author": "Howard Gossage" },
+      { "text": "If your advertising goes unnoticed, everything else is academic.", "author": "Bill Bernbach" },
+      { "text": "Your brand is what other people say about you when you're not in the room.", "author": "Jeff Bezos" }
+    ]
+  },
+  "Index": {
+    "title": "Wexo | Brands that move businesses"
+  },
+  "Header": {
+    "about": "About",
+    "services": "Services",
+    "cases": "Cases",
+    "contact": "Contact",
+    "home": "Home",
+    "menu": "Menu",
+    "close": "Close"
+  },
+  "Cases": {
+    "hintTitle": "Click and drag",
+    "hintSubtitle": "To explore our universe of cases",
+    "hudTitlePrefix": "Our",
+    "hudTitleAccent": "transformations",
+    "hudSubtitle": "Drag to explore the map",
+    "ctaTop": "Liked what you saw?",
+    "ctaTitle": "Your brand deserves to be here",
+    "ctaButton": "Transform your brand with us"
+  },
+  "Home": {
+    "heroLine1": "Brands",
+    "heroLine2": "that transform",
+    "heroLine3": "businesses.",
+    "heroSub": "Wexo is a creative brand consultancy. We work with companies that want to stop competing on price.",
+    "heroCta": "Discover Wexo",
+    "manifestoCta": "See our cases",
+    "manifestoLine1": "Many companies",
+    "manifestoLine2": "confuse communication",
+    "manifestoLine3With": "with",
+    "manifestoLine3Brand": "brand.",
+    "manifestoItalic": "Communication is what you say.",
+    "manifestoLine4": "Brand is what people feel",
+    "manifestoLine5": "when you stop talking.",
+    "manifestoCaption": "We work with companies that understand brand is the most valuable asset — and haven't invested in it the way it deserves.",
+    "manifestoStat": "Only 37% of professionals can integrate branding and performance in practice. We help companies enter that statistic.",
+    "pilaresLabel": "Our Pillars",
+    "pilaresHeading": "What we deliver",
+    "pillar1Title": "Brand Strategy",
+    "pillar1Desc": "Diagnosis, positioning and brand narrative. The foundation for any company to differentiate itself from the competition with depth.",
+    "pillar2Title": "Visual Identity",
+    "pillar2Desc": "Complete visual system, designed to communicate your positioning before a single word is read or spoken.",
+    "pillar3Title": "Rebranding",
+    "pillar3Desc": "The brutal and poetic transformation of a mature company embracing its next phase of market expansion.",
+    "pillar4Title": "Brand Consulting",
+    "pillar4Desc": "Long-term organic partnership. We execute and defend the roots of your brand over the years, supporting growth.",
+    "ecosystemLabel": "Our Ecosystem",
+    "ecosystemHeading": "Brands served",
+    "ecosystemLink": "See our cases →",
+    "statYears": "of market expertise",
+    "statProjects": "completed brand projects",
+    "statSectors": "sectors served with excellence",
+    "ctaHeading": "Is your company ready for a brand that",
+    "ctaAccent": "works for you?",
+    "ctaButton": "Start Transformation",
+    "ctaLink": "Learn more about Wexo"
+  },
+  "About": {
+    "label": "Who we are",
+    "headline1": "A creative consultancy",
+    "headline2": "built for companies",
+    "headline3": "that grew beyond the obvious.",
+    "body1": "Wexo was born from the real estate market — one of Brazil's most demanding in terms of speed and results. What we learned there: brand matters far more than the sector believes.",
+    "body2": "Today we carry that conviction to companies in any segment that want to stop competing for attention and start deserving it.",
+    "stat1Label": "years in communication",
+    "stat2Label": "brands created",
+    "stat3Label": "landing pages created",
+    "leadershipSection": "Our Leadership",
+    "memberIndexLabel": "Our Leadership",
+    "member1Title": "Managing Partner",
+    "member1Bio": "+20 years in communication, with projects developed at Brazil's leading agencies, serving international brands such as Samsung, GM, Embraer, Bradesco, Terra, among others. Specialist in project and team management, digital development and creative leadership. Gold and Silver winner at Wave Festival.",
+    "member1Tags": ["strategy", "business", "digital", "dev", "ai", "paid traffic", "seo", "integrations", "planning", "social media", "video"],
+    "member2Title": "Managing Partner",
+    "member2Bio": "+30 years of Branding projects with +500 brands created for major market players, specialist in Branding and Creation, responsible for producing materials for launches, trade shows, events and external communication.",
+    "member2Tags": ["branding", "design", "brands", "rebranding", "positioning", "strategy", "client relations", "relationship", "production"],
+    "valuesLabel": "What we believe",
+    "value1": "Brand is not visual identity. It's the difference between being <accent>chosen</accent> and being <strike>compared</strike>.",
+    "value2": "Most companies don't need <strike>more</strike> communication. They need <accent>more precise</accent> communication.",
+    "value3": "An agency that never disagrees with clients isn't a partner. It's a <accent>supplier</accent>.",
+    "ctaLabel": "Next step",
+    "ctaHeading": "Let's build something that",
+    "ctaAccent": "deserves to be remembered",
+    "ctaButton": "Talk to Wexo"
+  },
+  "Services": {
+    "heading": "Our Services",
+    "subtitle": "Complete solutions to position, design and manage brands people can't ignore.",
+    "serviceLabel": "SERVICE",
+    "forWhom": "For Whom",
+    "includes": "What's included",
+    "deliverables": "Deliverables",
+    "cta": "Talk about this service",
+    "items": [
+      {
+        "titulo": "Brand Strategy",
+        "para": "For companies that don't yet know how to differentiate themselves — or do, but can't communicate it.",
+        "inclui": ["Brand diagnosis (immersion workshop)", "Positioning definition", "Message architecture", "Brand narrative (brand story)"],
+        "entrega": "Brand Deck + Strategic Brand Book"
+      },
+      {
+        "titulo": "Visual Identity",
+        "para": "For brands with a strong strategy but a visual that doesn't match the value promise.",
+        "inclui": ["Logo and symbol system", "Color palette and institutional typography", "Art direction and photographic style", "Brand applications (stationery, digital)"],
+        "entrega": "Visual Identity Manual + Assets"
+      },
+      {
+        "titulo": "Rebranding",
+        "para": "For companies at an inflection point: mergers, new generation, target audience shift or expansion.",
+        "inclui": ["Current brand audit", "Full strategic repositioning", "New Visual Identity", "Launch Strategy (Rollout)"],
+        "entrega": "Transition Plan + Complete Brand Book"
+      },
+      {
+        "titulo": "Ongoing Consulting",
+        "para": "For clients who already have the foundation and need a continuous strategic partner to evolve the brand.",
+        "inclui": ["Brand KPI tracking", "Brand awareness campaigns", "Design system evolution", "Employer branding"],
+        "entrega": "Monthly Consulting Retainer"
+      }
+    ]
+  },
+  "Contact": {
+    "badge": "Wexo · Brand Consultancy",
+    "heading1": "Let's",
+    "heading2": "begin.",
+    "body": "No formal pitch, no commitment. If you felt your brand can do more, this is where the conversation starts.",
+    "whatsappSub": "Quick response, no fluff",
+    "instagramSub": "Follow our work",
+    "divider": "or prefer to leave your details",
+    "nameLabel": "Name",
+    "namePlaceholder": "Your name",
+    "contactLabel": "Email or WhatsApp",
+    "contactPlaceholder": "How we can reach you",
+    "projectLabel": "About the project",
+    "projectOptional": "optional",
+    "projectPlaceholder": "Tell us a bit about where your company is at... can be brief.",
+    "submit": "Send",
+    "emailLabel": "Direct Email",
+    "locationLabel": "Location",
+    "location": "Trend City Center · Porto Alegre, RS"
+  },
+  "Footer": {
+    "nav1": "Wexo",
+    "about": "About the Consultancy",
+    "services": "What we do",
+    "cases": "Our Cases",
+    "nav2": "Contact",
+    "startProject": "Start a project",
+    "nav3": "Networks",
+    "copyright": "All rights reserved.",
+    "brand": "Brand created by Wexo itself"
+  }
+}
