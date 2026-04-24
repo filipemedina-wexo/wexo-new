@@ -13,8 +13,9 @@ const baseConfig: NextConfig = {
   trailingSlash: true,
 };
 
-const nextConfig: NextConfig = isProd
-  ? { ...baseConfig, output: 'export', basePath: '/new-wexo', assetPrefix: '/new-wexo' }
-  : baseConfig;
+const nextConfig: NextConfig = {
+  ...baseConfig,
+  output: 'standalone',
+};
 
 export default withNextIntl(nextConfig);

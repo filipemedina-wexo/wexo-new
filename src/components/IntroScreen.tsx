@@ -65,7 +65,7 @@ export default function IntroScreen() {
 
   if (complete) return null;
 
-  const quote = quotes[quoteIndex] ?? quotes[0];
+  const quote = quotes?.[quoteIndex] ?? quotes?.[0] ?? { text: 'Loading...', author: 'Wexo' };
 
   return (
     <div
