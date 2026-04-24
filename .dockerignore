@@ -1,0 +1,11 @@
+node_modules
+.next
+.git
+.claude
+.github
+out
+build
+*.log
+.env*.local
+Dockerfile
+.dockerignore
