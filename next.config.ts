@@ -6,10 +6,6 @@ const withNextIntl = createNextIntlPlugin();
 const isProd = process.env.NODE_ENV === 'production';
 
 const baseConfig: NextConfig = {
-  images: {
-    loader: 'custom',
-    loaderFile: './src/lib/imageLoader.ts',
-  },
   trailingSlash: true,
 };
 
