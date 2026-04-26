@@ -1,6 +1,9 @@
-// Middleware desativado para export estático (FTP/CDN sem servidor Node)
-export function middleware() {}
+import createMiddleware from 'next-intl/middleware';
+import { routing } from './i18n/routing';
+
+export default createMiddleware(routing);
 
 export const config = {
-  matcher: []
+  // Aplica o middleware em todas as rotas exceto arquivos estáticos e APIs internas
+  matcher: ['/((?!_next|_vercel|.*\\..*).*)']
 };
