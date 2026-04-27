@@ -168,17 +168,17 @@ export default function SobrePage() {
               <p>{t('body2')}</p>
             </div>
 
-            <div className="md:col-span-7 grid grid-cols-3 gap-0 border border-white/10 self-start">
-              <div className="sobre-stat px-6 py-8 border-r border-white/10">
-                <div className="font-display font-black text-4xl md:text-5xl text-accent mb-1">+20</div>
+            <div className="md:col-span-7 grid grid-cols-1 sm:grid-cols-3 gap-0 border border-white/10 self-start">
+              <div className="sobre-stat px-5 py-6 border-b sm:border-b-0 sm:border-r border-white/10">
+                <div className="font-display font-black text-3xl md:text-5xl text-accent mb-1">+20</div>
                 <div className="text-xs uppercase tracking-widest text-muted font-body leading-tight">{t('stat1Label')}</div>
               </div>
-              <div className="sobre-stat px-6 py-8 border-r border-white/10">
-                <div className="font-display font-black text-4xl md:text-5xl text-accent mb-1">+500</div>
+              <div className="sobre-stat px-5 py-6 border-b sm:border-b-0 sm:border-r border-white/10">
+                <div className="font-display font-black text-3xl md:text-5xl text-accent mb-1">+500</div>
                 <div className="text-xs uppercase tracking-widest text-muted font-body leading-tight">{t('stat2Label')}</div>
               </div>
-              <div className="sobre-stat px-6 py-8">
-                <div className="font-display font-black text-4xl md:text-5xl text-accent mb-1">+1.200</div>
+              <div className="sobre-stat px-5 py-6">
+                <div className="font-display font-black text-3xl md:text-5xl text-accent mb-1">+1.200</div>
                 <div className="text-xs uppercase tracking-widest text-muted font-body leading-tight">{t('stat3Label')}</div>
               </div>
             </div>
@@ -267,7 +267,7 @@ export default function SobrePage() {
       {/* ─── CTA ──────────────────────────────────────────────── */}
       <section className="py-32 border-t border-white/10 bg-brand-surface text-center px-6">
         <p className="text-xs uppercase tracking-[0.3em] text-accent mb-8 font-body">{t('ctaLabel')}</p>
-        <h2 className="font-display font-black text-4xl md:text-6xl uppercase mb-12 max-w-3xl mx-auto leading-tight">
+        <h2 className="font-display font-black text-2xl sm:text-3xl md:text-6xl uppercase mb-10 md:mb-12 max-w-3xl mx-auto leading-tight">
           {t('ctaHeading')} <span className="text-accent italic not-italic">{t('ctaAccent')}</span>.
         </h2>
         <Link

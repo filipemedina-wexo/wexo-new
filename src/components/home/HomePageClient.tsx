@@ -148,7 +148,7 @@ export default function HomePageClient() {
         </div>
 
         <div className="relative z-10 w-full max-w-5xl mt-12">
-          <h1 className="font-display text-[clamp(4.5rem,10vw,8rem)] leading-[0.9] tracking-tighter mb-8 uppercase font-bold">
+          <h1 className="font-display text-3xl sm:text-5xl md:text-7xl lg:text-[8rem] leading-[0.9] tracking-tighter mb-8 uppercase font-bold">
             <div className="overflow-hidden"><div className="hero-title-line">{t('heroLine1')}</div></div>
             <div className="overflow-hidden"><div className="hero-title-line text-white/90">{t('heroLine2')}</div></div>
             <div className="overflow-hidden"><div className="hero-title-line text-accent">{t('heroLine3')}</div></div>
@@ -175,12 +175,12 @@ export default function HomePageClient() {
         <div className="container mx-auto max-w-6xl relative z-10">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-12">
             <div className="col-span-1 md:col-span-8">
-              <h2 className="font-display text-4xl md:text-5xl lg:text-7xl leading-[1.05] mb-12 text-white/40 uppercase">
+              <h2 className="font-display text-2xl sm:text-3xl md:text-5xl lg:text-7xl leading-[1.05] mb-12 text-white/40 uppercase">
                 <span className="manifesto-text block transform translate-y-12 opacity-0">{t('manifestoLine1')} </span>
                 <span className="manifesto-text block transform translate-y-12 opacity-0 text-white font-black">{t('manifestoLine2')}</span>
                 <span className="manifesto-text block transform translate-y-12 opacity-0"> {t('manifestoLine3With')} <span className="text-accent underline decoration-accent underline-offset-8">{t('manifestoLine3Brand')}</span></span>
                 <br/>
-                <span className="manifesto-text block transform translate-y-12 opacity-0 font-body font-normal lowercase tracking-tight italic text-3xl mb-4 text-cream">{t('manifestoItalic')} </span>
+                <span className="manifesto-text block transform translate-y-12 opacity-0 font-body font-normal lowercase tracking-tight italic text-xl md:text-3xl mb-4 text-cream">{t('manifestoItalic')} </span>
                 <span className="manifesto-text block transform translate-y-12 opacity-0">{t('manifestoLine4')} </span>
                 <span className="manifesto-text block transform translate-y-12 opacity-0 text-white font-black bg-accent/20 px-2 mt-2 w-fit">{t('manifestoLine5')}</span>
                 <br/>
@@ -209,7 +209,7 @@ export default function HomePageClient() {
       <section className="min-h-screen py-24 border-t border-white/20 bg-brand-surface relative overflow-hidden">
         <div className="container mx-auto px-6 mb-16">
           <h3 className="text-xs font-body uppercase tracking-[0.3em] text-accent mb-4 border-l-2 border-accent pl-4">{t('pilaresLabel')}</h3>
-          <h2 className="font-display font-black text-4xl md:text-6xl uppercase tracking-tighter">{t('pilaresHeading')}</h2>
+          <h2 className="font-display font-black text-2xl sm:text-3xl md:text-6xl uppercase tracking-tighter">{t('pilaresHeading')}</h2>
         </div>
 
         <div className="w-full flex flex-col md:flex-row h-[60vh] md:h-[70vh] border-y border-white/20">
@@ -217,8 +217,8 @@ export default function HomePageClient() {
             <div className="absolute inset-0 bg-black/60 group-hover:bg-black/20 transition-colors duration-700 z-10 pointer-events-none" />
             <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=800&auto=format&fit=crop" alt="Brand Strategy" className="absolute inset-0 w-full h-full object-cover grayscale opacity-40 group-hover:grayscale-0 group-hover:opacity-80 group-hover:scale-110 transition-all duration-1000 ease-out" />
             <div className="relative z-20 w-full">
-              <div className="font-display font-black text-white/50 text-5xl md:text-7xl mb-4 group-hover:text-accent group-hover:-translate-y-2 transition-all duration-500">01</div>
-              <h4 className="text-2xl md:text-3xl font-display font-black uppercase tracking-tight mb-4 group-hover:-translate-y-2 transition-transform duration-500 text-white">{t('pillar1Title')}</h4>
+              <div className="font-display font-black text-white/50 text-3xl md:text-7xl mb-2 md:mb-4 group-hover:text-accent group-hover:-translate-y-2 transition-all duration-500">01</div>
+              <h4 className="text-base md:text-3xl font-display font-black uppercase tracking-tight mb-2 md:mb-4 group-hover:-translate-y-2 transition-transform duration-500 text-white">{t('pillar1Title')}</h4>
               <p className="text-sm text-white/80 opacity-0 group-hover:opacity-100 transition-all duration-500 delay-100 lg:max-w-sm h-0 group-hover:h-auto overflow-hidden font-body translate-y-4 group-hover:translate-y-0">
                 {t('pillar1Desc')}
               </p>
@@ -228,8 +228,8 @@ export default function HomePageClient() {
             <div className="absolute inset-0 bg-black/60 group-hover:bg-black/20 transition-colors duration-700 z-10 pointer-events-none" />
             <img src="https://images.unsplash.com/photo-1541701494587-cb58502866ab?q=80&w=800&auto=format&fit=crop" alt="Visual Identity" className="absolute inset-0 w-full h-full object-cover grayscale opacity-40 group-hover:grayscale-0 group-hover:opacity-80 group-hover:scale-110 transition-all duration-1000 ease-out" />
             <div className="relative z-20 w-full">
-              <div className="font-display font-black text-white/50 text-5xl md:text-7xl mb-4 group-hover:text-accent group-hover:-translate-y-2 transition-all duration-500">02</div>
-              <h4 className="text-2xl md:text-3xl font-display font-black uppercase tracking-tight mb-4 group-hover:-translate-y-2 transition-transform duration-500 text-white">{t('pillar2Title')}</h4>
+              <div className="font-display font-black text-white/50 text-3xl md:text-7xl mb-2 md:mb-4 group-hover:text-accent group-hover:-translate-y-2 transition-all duration-500">02</div>
+              <h4 className="text-base md:text-3xl font-display font-black uppercase tracking-tight mb-2 md:mb-4 group-hover:-translate-y-2 transition-transform duration-500 text-white">{t('pillar2Title')}</h4>
               <p className="text-sm text-white/80 opacity-0 group-hover:opacity-100 transition-all duration-500 delay-100 lg:max-w-sm h-0 group-hover:h-auto overflow-hidden font-body translate-y-4 group-hover:translate-y-0">
                 {t('pillar2Desc')}
               </p>
@@ -239,8 +239,8 @@ export default function HomePageClient() {
             <div className="absolute inset-0 bg-black/60 group-hover:bg-black/20 transition-colors duration-700 z-10 pointer-events-none" />
             <img src="https://images.unsplash.com/photo-1557672172-298e090bd0f1?q=80&w=800&auto=format&fit=crop" alt="Rebranding" className="absolute inset-0 w-full h-full object-cover grayscale opacity-40 group-hover:grayscale-0 group-hover:opacity-80 group-hover:scale-110 transition-all duration-1000 ease-out" />
             <div className="relative z-20 w-full">
-              <div className="font-display font-black text-white/50 text-5xl md:text-7xl mb-4 group-hover:text-accent group-hover:-translate-y-2 transition-all duration-500">03</div>
-              <h4 className="text-2xl md:text-3xl font-display font-black uppercase tracking-tight mb-4 group-hover:-translate-y-2 transition-transform duration-500 text-white">{t('pillar3Title')}</h4>
+              <div className="font-display font-black text-white/50 text-3xl md:text-7xl mb-2 md:mb-4 group-hover:text-accent group-hover:-translate-y-2 transition-all duration-500">03</div>
+              <h4 className="text-base md:text-3xl font-display font-black uppercase tracking-tight mb-2 md:mb-4 group-hover:-translate-y-2 transition-transform duration-500 text-white">{t('pillar3Title')}</h4>
               <p className="text-sm text-white/80 opacity-0 group-hover:opacity-100 transition-all duration-500 delay-100 lg:max-w-sm h-0 group-hover:h-auto overflow-hidden font-body translate-y-4 group-hover:translate-y-0">
                 {t('pillar3Desc')}
               </p>
@@ -250,8 +250,8 @@ export default function HomePageClient() {
             <div className="absolute inset-0 bg-black/60 group-hover:bg-black/20 transition-colors duration-700 z-10 pointer-events-none" />
             <img src="https://images.unsplash.com/photo-1507608616759-54f48f0af0ee?q=80&w=800&auto=format&fit=crop" alt="Consulting" className="absolute inset-0 w-full h-full object-cover grayscale opacity-40 group-hover:grayscale-0 group-hover:opacity-80 group-hover:scale-110 transition-all duration-1000 ease-out" />
             <div className="relative z-20 w-full">
-              <div className="font-display font-black text-white/50 text-5xl md:text-7xl mb-4 group-hover:text-accent group-hover:-translate-y-2 transition-all duration-500">04</div>
-              <h4 className="text-2xl md:text-3xl font-display font-black uppercase tracking-tight mb-4 group-hover:-translate-y-2 transition-transform duration-500 text-white">{t('pillar4Title')}</h4>
+              <div className="font-display font-black text-white/50 text-3xl md:text-7xl mb-2 md:mb-4 group-hover:text-accent group-hover:-translate-y-2 transition-all duration-500">04</div>
+              <h4 className="text-base md:text-3xl font-display font-black uppercase tracking-tight mb-2 md:mb-4 group-hover:-translate-y-2 transition-transform duration-500 text-white">{t('pillar4Title')}</h4>
               <p className="text-sm text-white/80 opacity-0 group-hover:opacity-100 transition-all duration-500 delay-100 lg:max-w-sm h-0 group-hover:h-auto overflow-hidden font-body translate-y-4 group-hover:translate-y-0">
                 {t('pillar4Desc')}
               </p>
@@ -261,11 +261,11 @@ export default function HomePageClient() {
       </section>
 
       {/* SEÇÃO 4 — Clientes */}
-      <section className="py-24 relative z-10 bg-brand-bg">
-        <div className="container mx-auto px-6 mb-16 flex flex-col md:flex-row justify-between items-end border-b border-white/20 pb-8">
+      <section className="py-12 md:py-24 relative z-10 bg-brand-bg">
+        <div className="container mx-auto px-6 mb-8 md:mb-16 flex flex-col md:flex-row justify-between items-start md:items-end border-b border-white/20 pb-6 md:pb-8">
           <div>
             <h3 className="text-xs font-body uppercase tracking-[0.3em] text-accent mb-4 border-l-2 border-accent pl-4">{t('ecosystemLabel')}</h3>
-            <h2 className="font-display font-black text-4xl md:text-6xl uppercase tracking-tighter">{t('ecosystemHeading')}</h2>
+            <h2 className="font-display font-black text-2xl sm:text-3xl md:text-6xl uppercase tracking-tighter">{t('ecosystemHeading')}</h2>
           </div>
           <Link href="/cases" className="text-sm uppercase tracking-widest text-muted hover:text-white transition-colors hoverable mt-8 md:mt-0 font-body">
             {t('ecosystemLink')}
@@ -273,9 +273,9 @@ export default function HomePageClient() {
         </div>
 
         <div className="container mx-auto px-6">
-          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-0 border-t border-l border-white/20">
+          <div className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-0 border-t border-l border-white/20">
             {activeLogos.map((num, i) => (
-              <div key={i} className="client-cell aspect-video border-b border-r border-[#EFEFEF] flex items-center justify-center p-6 sm:p-8 bg-white relative overflow-hidden transition-colors duration-500">
+              <div key={i} className={`client-cell aspect-video border-b border-r border-[#EFEFEF] flex items-center justify-center p-3 sm:p-8 bg-white relative overflow-hidden transition-colors duration-500${i >= 15 ? ' hidden md:flex' : ''}`}>
                 <div className={`client-logo-wrapper-${i} w-full h-full relative flex items-center justify-center`} style={{ perspective: '800px' }}>
                   <div className="inner-flipper w-full h-full relative flex items-center justify-center">
                     <img
@@ -302,15 +302,15 @@ export default function HomePageClient() {
         <div className="container mx-auto px-6 relative z-10">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-16 text-center">
             <div>
-              <div className="stat-num font-display text-6xl md:text-8xl text-accent mb-4" data-val="12" data-suffix=" anos">0</div>
+              <div className="stat-num font-display text-5xl md:text-8xl text-accent mb-4" data-val="12" data-suffix=" anos">0</div>
               <div className="text-xs uppercase tracking-widest text-muted">{t('statYears')}</div>
             </div>
             <div>
-              <div className="stat-num font-display text-6xl md:text-8xl text-accent mb-4" data-val="40" data-prefix="+">0</div>
+              <div className="stat-num font-display text-5xl md:text-8xl text-accent mb-4" data-val="40" data-prefix="+">0</div>
               <div className="text-xs uppercase tracking-widest text-muted">{t('statProjects')}</div>
             </div>
             <div>
-              <div className="stat-num font-display text-6xl md:text-8xl text-accent mb-4" data-val="8" data-suffix=" setores">0</div>
+              <div className="stat-num font-display text-5xl md:text-8xl text-accent mb-4" data-val="8" data-suffix=" setores">0</div>
               <div className="text-xs uppercase tracking-widest text-muted">{t('statSectors')}</div>
             </div>
           </div>
@@ -319,7 +319,7 @@ export default function HomePageClient() {
 
       {/* SEÇÃO 6 — CTA Final */}
       <section className="min-h-[80vh] flex flex-col justify-center items-center text-center px-6 relative">
-        <h2 className="font-display text-4xl md:text-6xl mb-12 max-w-4xl leading-tight">
+        <h2 className="font-display text-2xl sm:text-3xl md:text-6xl mb-8 md:mb-12 max-w-4xl leading-tight">
           {t('ctaHeading')} <span className="italic text-accent">{t('ctaAccent')}</span>
         </h2>
 

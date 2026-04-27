@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import gsap from 'gsap';
 import Image from 'next/image';
 import { Link } from '@/i18n/routing';
@@ -23,67 +23,43 @@ const canvasWidth = 4400;
 const canvasHeight = 3200;
 
 const caseData: Omit<CaseItem, 'id' | 'description' | 'left' | 'top' | 'width' | 'height' | 'parallaxSpeed'>[] = [
-  { client: 'Yadra',            images: ['/cases/yadra.webp', '/cases/yadra-2.webp', '/cases/yadra-3.webp'] },
-  { client: 'Retina center',    images: ['/cases/retina-center.webp', '/cases/retina-center-2.webp'] },
-  { client: 'Parallax',         images: ['/cases/parallax.webp', '/cases/parallax-2.webp'] },
-  { client: 'Ab incorporadora', project: 'Ronald42',             images: ['/cases/ab-incorporadora_ronald42.webp', '/cases/ab-incorporadora_ronald42-2.webp'] },
-  { client: 'Hospital da plastica',                              images: ['/cases/hospital-da-plastica.webp', '/cases/hospital-da-plastica-2.webp'] },
-  { client: 'Nazale',           project: 'Viz',                  images: ['/cases/nazale_viz.webp', '/cases/nazale_viz-2.webp'] },
-  { client: 'Nazale',           project: 'Zephyr',               images: ['/cases/nazale_zephyr.webp', '/cases/nazale_zephyr-2.webp', '/cases/nazale_zephyr-3.webp'] },
-  { client: 'Voxxa',            images: ['/cases/voxxa.webp', '/cases/voxxa-2.webp'] },
-  { client: 'Arccio',           project: 'Reserva park canella', images: ['/cases/arccio_reserva-park-canella.webp', '/cases/arccio_reserva-park-canella-2.webp'] },
-  { client: 'Arskammer',        images: ['/cases/arskammer.webp', '/cases/arskammer-2.webp'] },
-  { client: 'La rocca',         images: ['/cases/la-rocca.webp', '/cases/la-rocca-2.webp'] },
-  { client: 'Mirar',            images: ['/cases/mirar.webp', '/cases/mirar-2.webp'] },
-  { client: 'Durafa',           images: ['/cases/durafa.webp', '/cases/durafa-2.webp'] },
-  { client: 'Durafa',           project: 'Oxy',                  images: ['/cases/durafa_oxy.webp', '/cases/durafa_oxy-2.webp'] },
-  { client: 'Fogoct',           images: ['/cases/fogoct.webp', '/cases/fogoct-2.webp'] },
-  { client: 'Setdoor',          images: ['/cases/setdoor.webp', '/cases/setdoor-2.webp'] },
-  { client: 'Nautilus',         images: ['/cases/nautilus.webp', '/cases/nautilus-2.webp'] },
-  { client: 'Find',             images: ['/cases/find.webp', '/cases/find-2.webp'] },
-  { client: 'Meraki',           images: ['/cases/meraki.webp', '/cases/meraki-2.webp'] },
-  { client: 'Amplastic',        images: ['/cases/amplastic.webp'] },
-  { client: 'Gesta',            images: ['/cases/gesta.webp', '/cases/gesta-2.webp'] },
-  { client: 'Censi fisa',       images: ['/cases/censi-fisa.webp'] },
-  { client: 'Legacy',           images: ['/cases/legacy.webp', '/cases/legacy-2.webp'] },
-  { client: 'Alto lindoia',     images: ['/cases/alto-lindoia.webp'] },
-  { client: 'Arisa',            images: ['/cases/arisa.webp', '/cases/arisa-2.webp'] },
-  { client: 'Dimak',            images: ['/cases/dimak.webp', '/cases/dimak-2.webp'] },
-  { client: 'Ditech',           images: ['/cases/ditech.webp', '/cases/ditech-2.webp'] },
-  { client: 'Emedical',         images: ['/cases/emedical.webp', '/cases/emedical-2.webp'] },
-  { client: 'Grupo dasos',      images: ['/cases/grupo-dasos.webp', '/cases/grupo-dasos-2.webp', '/cases/grupo-dasos-3.webp'] },
-  { client: 'Kravi',            images: ['/cases/kravi.webp', '/cases/kravi-2.webp', '/cases/kravi-3.webp'] },
-  { client: 'La huerta',        images: ['/cases/la-huerta.webp', '/cases/la-huerta-2.webp', '/cases/la-huerta-3.webp', '/cases/la-huerta-4.webp'] },
-  { client: 'Sv digital',       images: ['/cases/sv-digital.webp', '/cases/sv-digital-2.webp', '/cases/sv-digital-3.webp'] },
-  { client: 'Svbpar',           images: ['/cases/svbpar.webp', '/cases/svbpar-2.webp', '/cases/svbpar-3.webp'] },
-  { client: 'Wtcmeat',          images: ['/cases/wtcmeat.webp', '/cases/wtcmeat-2.webp', '/cases/wtcmeat-3.webp'] },
+  { client: 'Yadra', images: ['/cases/yadra.webp', '/cases/yadra-2.webp', '/cases/yadra-3.webp'] },
+  { client: 'Retina center', images: ['/cases/retina-center.webp', '/cases/retina-center-2.webp'] },
+  { client: 'Parallax', images: ['/cases/parallax.webp', '/cases/parallax-2.webp'] },
+  { client: 'Ab incorporadora', project: 'Ronald42', images: ['/cases/ab-incorporadora_ronald42.webp', '/cases/ab-incorporadora_ronald42-2.webp'] },
+  { client: 'Hospital da plastica', images: ['/cases/hospital-da-plastica.webp', '/cases/hospital-da-plastica-2.webp'] },
+  { client: 'Nazale', project: 'Viz', images: ['/cases/nazale_viz.webp', '/cases/nazale_viz-2.webp'] },
+  { client: 'Nazale', project: 'Zephyr', images: ['/cases/nazale_zephyr.webp', '/cases/nazale_zephyr-2.webp', '/cases/nazale_zephyr-3.webp'] },
+  { client: 'Voxxa', images: ['/cases/voxxa.webp', '/cases/voxxa-2.webp'] },
+  { client: 'Arccio', project: 'Reserva park canella', images: ['/cases/arccio_reserva-park-canella.webp', '/cases/arccio_reserva-park-canella-2.webp'] },
+  { client: 'Arskammer', images: ['/cases/arskammer.webp', '/cases/arskammer-2.webp'] },
+  { client: 'La rocca', images: ['/cases/la-rocca.webp', '/cases/la-rocca-2.webp'] },
+  { client: 'Mirar', images: ['/cases/mirar.webp', '/cases/mirar-2.webp'] },
+  { client: 'Durafa', images: ['/cases/durafa.webp', '/cases/durafa-2.webp'] },
+  { client: 'Durafa', project: 'Oxy', images: ['/cases/durafa_oxy.webp', '/cases/durafa_oxy-2.webp'] },
+  { client: 'Fogoct', images: ['/cases/fogoct.webp', '/cases/fogoct-2.webp'] },
+  { client: 'Setdoor', images: ['/cases/setdoor.webp', '/cases/setdoor-2.webp'] },
+  { client: 'Nautilus', images: ['/cases/nautilus.webp', '/cases/nautilus-2.webp'] },
+  { client: 'Find', images: ['/cases/find.webp', '/cases/find-2.webp'] },
+  { client: 'Meraki', images: ['/cases/meraki.webp', '/cases/meraki-2.webp'] },
+  { client: 'Amplastic', images: ['/cases/amplastic.webp'] },
+  { client: 'Gesta', images: ['/cases/gesta.webp', '/cases/gesta-2.webp'] },
+  { client: 'Censi fisa', images: ['/cases/censi-fisa.webp'] },
+  { client: 'Legacy', images: ['/cases/legacy.webp', '/cases/legacy-2.webp'] },
+  { client: 'Alto lindoia', images: ['/cases/alto-lindoia.webp'] },
+  { client: 'Arisa', images: ['/cases/arisa.webp', '/cases/arisa-2.webp'] },
+  { client: 'Dimak', images: ['/cases/dimak.webp', '/cases/dimak-2.webp'] },
+  { client: 'Ditech', images: ['/cases/ditech.webp', '/cases/ditech-2.webp'] },
+  { client: 'Emedical', images: ['/cases/emedical.webp', '/cases/emedical-2.webp'] },
+  { client: 'Grupo dasos', images: ['/cases/grupo-dasos.webp', '/cases/grupo-dasos-2.webp', '/cases/grupo-dasos-3.webp'] },
+  { client: 'Kravi', images: ['/cases/kravi.webp', '/cases/kravi-2.webp', '/cases/kravi-3.webp'] },
+  { client: 'La huerta', images: ['/cases/la-huerta.webp', '/cases/la-huerta-2.webp', '/cases/la-huerta-3.webp', '/cases/la-huerta-4.webp'] },
+  { client: 'Sv digital', images: ['/cases/sv-digital.webp', '/cases/sv-digital-2.webp', '/cases/sv-digital-3.webp'] },
+  { client: 'Svbpar', images: ['/cases/svbpar.webp', '/cases/svbpar-2.webp', '/cases/svbpar-3.webp'] },
+  { client: 'Wtcmeat', images: ['/cases/wtcmeat.webp', '/cases/wtcmeat-2.webp', '/cases/wtcmeat-3.webp'] },
 ];
 
-const cases: CaseItem[] = caseData.map((data, i) => {
-  const w = [300, 450, 600, 500][i % 4] as number;
-  const h = [400, 300, 600, 800][(i + 1) % 4] as number;
-
-  const cols = 7;
-  const rows = Math.ceil(caseData.length / cols);
-  const cellW = canvasWidth / cols;
-  const cellH = canvasHeight / rows;
-  const c = i % cols;
-  const r = Math.floor(i / cols);
-
-  const randomOffsetX = (Math.random() - 0.5) * (cellW * 0.25);
-  const randomOffsetY = (Math.random() - 0.5) * (cellH * 0.25);
-
-  return {
-    id: i + 1,
-    ...data,
-    description: '',
-    left: (c * cellW) + (cellW / 2) + randomOffsetX - (w / 2),
-    top:  (r * cellH) + (cellH / 2) + randomOffsetY - (h / 2),
-    width: w,
-    height: h,
-    parallaxSpeed: 0.5 + Math.random() * 1.5,
-  };
-});
+// cases computed inside component (responsive)
 
 export default function CasesPage() {
   const t = useTranslations('Cases');
@@ -92,18 +68,63 @@ export default function CasesPage() {
   const [slideIndices, setSlideIndices] = useState<Record<number, number>>({});
   const [activatedCards, setActivatedCards] = useState<Set<number>>(new Set());
 
-  const containerRef   = useRef<HTMLDivElement>(null);
-  const canvasRef      = useRef<HTMLDivElement>(null);
-  const caseRefs       = useRef<Record<number, HTMLElement | null>>({});
-  const didDragRef     = useRef(false);
-  const isDraggingRef  = useRef(false);
-  const dragStartRef   = useRef({ x: 0, y: 0 });
-  const panRef         = useRef({ x: -(canvasWidth / 2 - 1920 / 2), y: -(canvasHeight / 2 - 1080 / 2) });
-  const currentPanRef  = useRef(panRef.current);
-  const rafRef         = useRef<number | null>(null);
-  const hasDraggedRef  = useRef(false);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const canvasRef = useRef<HTMLDivElement>(null);
+  const caseRefs = useRef<Record<number, HTMLElement | null>>({});
+  const didDragRef = useRef(false);
+  const isDraggingRef = useRef(false);
+  const dragStartRef = useRef({ x: 0, y: 0 });
+  const panRef = useRef({ x: -(canvasWidth / 2 - 1920 / 2), y: -(canvasHeight / 2 - 1080 / 2) });
+  const currentPanRef = useRef(panRef.current);
+  const rafRef = useRef<number | null>(null);
+  const hasDraggedRef = useRef(false);
   const [hasDragged, setHasDragged] = useState(false);
-  const [showHint,   setShowHint]   = useState(false);
+  const [showHint, setShowHint] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => { setIsMobile(window.innerWidth < 768); }, []);
+
+  const cardScale = isMobile ? 0.48 : 1;
+  const effectiveCanvasW = Math.round(canvasWidth * cardScale);
+  const effectiveCanvasH = Math.round(canvasHeight * cardScale);
+
+  const cases = useMemo(() => {
+    return caseData.map((data, i) => {
+      const w = ([300, 450, 600, 500][i % 4] as number) * cardScale;
+      const h = ([400, 300, 600, 800][(i + 1) % 4] as number) * cardScale;
+      const cols = 7;
+      const rows = Math.ceil(caseData.length / cols);
+      const cellW = effectiveCanvasW / cols;
+      const cellH = effectiveCanvasH / rows;
+      const c = i % cols;
+      const r = Math.floor(i / cols);
+      const sx = Math.sin(i * 127.1) * 43758.5453;
+      const sy = Math.sin(i * 311.7) * 43758.5453;
+      const randomOffsetX = (sx - Math.floor(sx) - 0.5) * (cellW * 0.25);
+      const randomOffsetY = (sy - Math.floor(sy) - 0.5) * (cellH * 0.25);
+      return {
+        id: i + 1,
+        ...data,
+        description: '',
+        left: (c * cellW) + (cellW / 2) + randomOffsetX - (w / 2),
+        top: (r * cellH) + (cellH / 2) + randomOffsetY - (h / 2),
+        width: w,
+        height: h,
+        parallaxSpeed: 0.5 + (sx - Math.floor(sx)) * 1.5,
+      };
+    });
+  }, [isMobile, cardScale, effectiveCanvasW, effectiveCanvasH]);
+
+  // Recentra o pan ao detectar o tamanho real do viewport
+  useEffect(() => {
+    const vw = window.innerWidth;
+    const vh = window.innerHeight;
+    const cx = -(effectiveCanvasW / 2 - vw / 2);
+    const cy = -(effectiveCanvasH / 2 - vh / 2);
+    panRef.current = { x: cx, y: cy };
+    currentPanRef.current = { x: cx, y: cy };
+    gsap.set(canvasRef.current, { x: cx, y: cy });
+  }, [isMobile, effectiveCanvasW, effectiveCanvasH]);
 
   useEffect(() => {
     const t = setTimeout(() => { if (!hasDragged && !selectedCase) setShowHint(true); }, 3000);
@@ -119,8 +140,8 @@ export default function CasesPage() {
   useEffect(() => {
     document.body.style.overflow = 'hidden';
     const ctx = gsap.context(() => {
-      gsap.fromTo('.cases-title',  { y: 50, opacity: 0 }, { y: 0, opacity: 1, duration: 1,   ease: 'power3.out', delay: 0.2 });
-      gsap.fromTo('.canvas-item',  { scale: 0.8, opacity: 0 }, { scale: 1, opacity: 1, duration: 1.5, stagger: 0.02, ease: 'power3.out', delay: 0.5 });
+      gsap.fromTo('.cases-title', { y: 50, opacity: 0 }, { y: 0, opacity: 1, duration: 1, ease: 'power3.out', delay: 0.2 });
+      gsap.fromTo('.canvas-item', { scale: 0.8, opacity: 0 }, { scale: 1, opacity: 1, duration: 1.5, stagger: 0.02, ease: 'power3.out', delay: 0.5 });
     }, containerRef);
     return () => { document.body.style.overflow = 'auto'; ctx.revert(); };
   }, []);
@@ -162,8 +183,8 @@ export default function CasesPage() {
     const vw = window.innerWidth;
     const vh = window.innerHeight;
     panRef.current = {
-      x: Math.max(-(canvasWidth  - vw  + 200), Math.min(200, currentPanRef.current.x + dx)),
-      y: Math.max(-(canvasHeight - vh  + 200), Math.min(200, currentPanRef.current.y + dy)),
+      x: Math.max(-(effectiveCanvasW - vw + 200), Math.min(200, currentPanRef.current.x + dx)),
+      y: Math.max(-(effectiveCanvasH - vh + 200), Math.min(200, currentPanRef.current.y + dy)),
     };
     if (rafRef.current === null) {
       rafRef.current = requestAnimationFrame(() => {
@@ -221,11 +242,11 @@ export default function CasesPage() {
 
         {selectedCase && (
           <div className="absolute inset-4 md:inset-8 lg:inset-12 flex items-center justify-center pointer-events-none">
-            <div className="relative w-full h-full max-w-[1920px] aspect-video max-h-[90vh] bg-[#0A0A0F] border border-white/10 shadow-2xl rounded-3xl overflow-hidden pointer-events-auto">
+            <div className="relative w-full max-w-[1920px] aspect-video bg-[#0A0A0F] border border-white/10 shadow-2xl rounded-2xl md:rounded-3xl overflow-hidden pointer-events-auto">
 
               {/* Fechar */}
-              <button onClick={closeCase} className="absolute top-6 right-6 z-50 w-12 h-12 bg-black/50 hover:bg-white text-white hover:text-black rounded-full flex items-center justify-center transition-colors backdrop-blur-md border border-white/10">
-                <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 1L13 13M13 1L1 13" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
+              <button onClick={closeCase} className="absolute top-3 right-3 md:top-6 md:right-6 z-50 w-8 h-8 md:w-12 md:h-12 bg-black/50 hover:bg-white text-white hover:text-black rounded-full flex items-center justify-center transition-colors backdrop-blur-md border border-white/10">
+                <svg width="10" height="10" viewBox="0 0 14 14" fill="none"><path d="M1 1L13 13M13 1L1 13" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" /></svg>
               </button>
 
               {/* Imagens com cross-fade */}
@@ -242,24 +263,24 @@ export default function CasesPage() {
                 <>
                   <button
                     onClick={() => setModalSlide(s => (s - 1 + selectedCase.images.length) % selectedCase.images.length)}
-                    className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 z-50 w-12 h-12 bg-black/50 hover:bg-white text-white hover:text-black rounded-full flex items-center justify-center transition-colors backdrop-blur-md border border-white/10"
+                    className="absolute left-2 md:left-8 top-1/2 -translate-y-1/2 z-50 w-8 h-8 md:w-12 md:h-12 bg-black/50 hover:bg-white text-white hover:text-black rounded-full flex items-center justify-center transition-colors backdrop-blur-md border border-white/10"
                   >
-                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M10 3L5 8l5 5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                    <svg width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M10 3L5 8l5 5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" /></svg>
                   </button>
                   <button
                     onClick={() => setModalSlide(s => (s + 1) % selectedCase.images.length)}
-                    className="absolute right-4 md:right-20 top-1/2 -translate-y-1/2 z-50 w-12 h-12 bg-black/50 hover:bg-white text-white hover:text-black rounded-full flex items-center justify-center transition-colors backdrop-blur-md border border-white/10"
+                    className="absolute right-2 md:right-20 top-1/2 -translate-y-1/2 z-50 w-8 h-8 md:w-12 md:h-12 bg-black/50 hover:bg-white text-white hover:text-black rounded-full flex items-center justify-center transition-colors backdrop-blur-md border border-white/10"
                   >
-                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M6 3l5 5-5 5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                    <svg width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M6 3l5 5-5 5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" /></svg>
                   </button>
 
                   {/* Dots do modal */}
-                  <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-50 flex items-center gap-2">
+                  <div className="absolute bottom-3 md:bottom-8 left-1/2 -translate-x-1/2 z-50 flex items-center gap-1.5 md:gap-2">
                     {selectedCase.images.map((_, idx) => (
                       <button
                         key={idx}
                         onClick={() => setModalSlide(idx)}
-                        className={`rounded-full transition-all duration-300 ${idx === modalSlide ? 'w-5 h-1.5 bg-white' : 'w-1.5 h-1.5 bg-white/40 hover:bg-white/70'}`}
+                        className={`rounded-full transition-all duration-300 ${idx === modalSlide ? 'w-4 h-1 md:w-5 md:h-1.5 bg-white' : 'w-1 h-1 md:w-1.5 md:h-1.5 bg-white/40 hover:bg-white/70'}`}
                       />
                     ))}
                   </div>
@@ -267,14 +288,14 @@ export default function CasesPage() {
               )}
 
               {/* Logo */}
-              <div className="absolute top-8 left-8 md:top-12 md:left-12 opacity-80 pointer-events-none">
-                <Image src="/logo.png" alt="Wexo" width={100} height={32} className="object-contain" />
+              <div className="absolute top-3 left-3 md:top-8 md:left-8 lg:top-12 lg:left-12 opacity-80 pointer-events-none">
+                <Image src="/logo.png" alt="Wexo" width={64} height={20} className="object-contain md:w-[100px] md:h-[32px]" />
               </div>
 
               {/* Nome */}
-              <div className="absolute bottom-8 left-8 md:bottom-12 md:left-12 pointer-events-none">
-                <span className="text-accent text-[10px] uppercase tracking-[0.3em] font-display mb-2 block">{selectedCase.client}</span>
-                <h2 className="font-display text-4xl md:text-7xl lg:text-[6rem] leading-none text-white drop-shadow-2xl">
+              <div className="absolute bottom-3 left-3 md:bottom-8 md:left-8 lg:bottom-12 lg:left-12 pointer-events-none">
+                <span className="text-accent text-[8px] md:text-[10px] uppercase tracking-[0.3em] font-display mb-1 block">{selectedCase.client}</span>
+                <h2 className="font-display text-lg md:text-7xl lg:text-[6rem] leading-none text-white drop-shadow-2xl">
                   {selectedCase.project ?? selectedCase.client}
                 </h2>
               </div>
@@ -309,7 +330,7 @@ export default function CasesPage() {
           <div className="relative flex items-center justify-center w-32 h-32 mb-4">
             <div className="absolute w-12 h-12 bg-accent/40 rounded-full animate-ping" style={{ animationDuration: '2s' }} />
             <svg className="absolute text-white stroke-2 drop-shadow-2xl" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" style={{ animation: 'dragAnimation 2s infinite ease-in-out' }}>
-              <path d="M10 11V3a2 2 0 1 1 4 0v8"/><path d="M14 11V7a2 2 0 1 1 4 0v2"/><path d="M18 9V6a2 2 0 1 1 4 0v9a8 8 0 0 1-13.6 5.6"/><path d="M8.4 14.6 4.3 10.5a2 2 0 1 1 2.8-2.8L10 11"/>
+              <path d="M10 11V3a2 2 0 1 1 4 0v8" /><path d="M14 11V7a2 2 0 1 1 4 0v2" /><path d="M18 9V6a2 2 0 1 1 4 0v9a8 8 0 0 1-13.6 5.6" /><path d="M8.4 14.6 4.3 10.5a2 2 0 1 1 2.8-2.8L10 11" />
             </svg>
             <style>{`
               @keyframes dragAnimation {
@@ -329,15 +350,15 @@ export default function CasesPage() {
         </div>
 
         {/* HUD */}
-        <div className="absolute top-32 left-12 z-50 pointer-events-none">
-          <h1 className="cases-title font-display text-5xl md:text-7xl mb-4">
+        <div className="absolute top-24 md:top-32 left-6 md:left-12 z-50 pointer-events-none">
+          <h1 className="cases-title font-display text-3xl sm:text-4xl md:text-7xl mb-3 md:mb-4 leading-tight">
             {t('hudTitlePrefix')} <em className="text-accent italic">{t('hudTitleAccent')}</em>
           </h1>
-          <div className="cases-title flex items-center gap-4">
-            <div className="w-10 h-10 border border-white/20 rounded-full flex items-center justify-center animate-pulse">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M5 9l-3 3 3 3M9 5l3-3 3 3M19 9l3 3-3 3M9 19l3 3 3 3" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
+          <div className="cases-title flex items-center gap-3 md:gap-4">
+            <div className="w-8 h-8 md:w-10 md:h-10 border border-white/20 rounded-full flex items-center justify-center animate-pulse">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M5 9l-3 3 3 3M9 5l3-3 3 3M19 9l3 3-3 3M9 19l3 3 3 3" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" /></svg>
             </div>
-            <p className="text-muted text-sm uppercase tracking-widest">{t('hudSubtitle')}</p>
+            <p className="text-muted text-xs md:text-sm uppercase tracking-widest">{t('hudSubtitle')}</p>
           </div>
         </div>
 
@@ -350,14 +371,14 @@ export default function CasesPage() {
               <span className="font-display text-white text-xl md:text-2xl leading-snug text-center">{t('ctaTitle')}</span>
               <span className="mt-1 flex items-center gap-2 bg-white/10 border border-white/30 text-white text-[11px] uppercase tracking-widest font-body px-4 py-2 rounded-full hover:bg-accent hover:text-black hover:border-transparent transition-all duration-300 cursor-pointer">
                 {t('ctaButton')}
-                <svg width="12" height="12" viewBox="0 0 14 14" fill="none"><path d="M1 7h12M8 2l5 5-5 5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                <svg width="12" height="12" viewBox="0 0 14 14" fill="none"><path d="M1 7h12M8 2l5 5-5 5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" /></svg>
               </span>
             </Link>
           </div>
         </div>
 
         {/* Canvas */}
-        <div ref={canvasRef} className="absolute top-0 left-0" style={{ width: canvasWidth, height: canvasHeight, willChange: 'transform' }}>
+        <div ref={canvasRef} className="absolute top-0 left-0" style={{ width: effectiveCanvasW, height: effectiveCanvasH, willChange: 'transform' }}>
           {cases.map((c) => {
             const activeSlide = slideIndices[c.id] ?? 0;
             const hasMany = c.images.length > 1;
@@ -393,14 +414,14 @@ export default function CasesPage() {
                       onClick={(e) => setCardSlide(c.id, -1, c.images.length, e)}
                       onPointerDown={(e) => e.stopPropagation()}
                     >
-                      <svg width="10" height="10" viewBox="0 0 16 16" fill="none"><path d="M10 3L5 8l5 5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                      <svg width="10" height="10" viewBox="0 0 16 16" fill="none"><path d="M10 3L5 8l5 5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" /></svg>
                     </button>
                     <button
                       className="absolute right-2 top-1/2 -translate-y-1/2 z-20 w-7 h-7 bg-black/60 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-200 border border-white/10 hover:bg-white hover:text-black text-white"
                       onClick={(e) => setCardSlide(c.id, 1, c.images.length, e)}
                       onPointerDown={(e) => e.stopPropagation()}
                     >
-                      <svg width="10" height="10" viewBox="0 0 16 16" fill="none"><path d="M6 3l5 5-5 5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                      <svg width="10" height="10" viewBox="0 0 16 16" fill="none"><path d="M6 3l5 5-5 5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" /></svg>
                     </button>
 
                     {/* Dots do card */}
