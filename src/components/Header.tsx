@@ -27,7 +27,7 @@ export default function Header() {
     >
       <div className="container mx-auto px-6 md:px-12 flex justify-between items-center">
         <Link href="/" className="relative w-32 h-10 hoverable">
-          <Image src="/logo.png" alt="Wexo" fill className="object-contain" priority />
+          <Image src="/logo.png" alt="Wexo" fill className="object-contain" priority sizes="(max-width: 768px) 100vw, 128px" />
         </Link>
 
         <nav className="hidden md:flex items-center space-x-8 text-sm uppercase tracking-widest text-muted hover:text-cream transition-colors duration-300">

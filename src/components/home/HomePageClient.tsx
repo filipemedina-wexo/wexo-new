@@ -65,7 +65,7 @@ export default function HomePageClient() {
 
         return prev;
       });
-    }, 2800);
+    }, 1200);
 
     return () => clearInterval(flipInterval);
   }, []);
@@ -196,7 +196,7 @@ export default function HomePageClient() {
                 <div className="absolute -top-2 -right-2 w-4 h-4 bg-accent"></div>
                 <div className="absolute -bottom-2 -left-2 w-4 h-4 bg-white/20"></div>
                 <p className="text-sm text-muted leading-relaxed font-body">
-                  <span className="text-accent text-5xl font-display font-black block mb-4">37%</span>
+                  <span className="text-accent text-5xl font-display font-black block mb-4">81%</span>
                   {t('manifestoStat')}
                 </p>
               </div>
@@ -215,7 +215,7 @@ export default function HomePageClient() {
         <div className="w-full flex flex-col md:flex-row h-[60vh] md:h-[70vh] border-y border-white/20">
           <div className="group flex-1 border-b md:border-b-0 md:border-r border-white/20 hover:flex-[2.5] transition-all duration-[800ms] ease-[cubic-bezier(0.25,1,0.5,1)] relative overflow-hidden flex items-end p-8 md:p-12 hoverable cursor-pointer">
             <div className="absolute inset-0 bg-black/60 group-hover:bg-black/20 transition-colors duration-700 z-10 pointer-events-none" />
-            <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=800&auto=format&fit=crop" alt="Brand Strategy" className="absolute inset-0 w-full h-full object-cover grayscale opacity-40 group-hover:grayscale-0 group-hover:opacity-80 group-hover:scale-110 transition-all duration-1000 ease-out" />
+            <img src="/cases/parallax-2.webp" alt="Brand Strategy" className="absolute inset-0 w-full h-full object-cover grayscale opacity-40 group-hover:grayscale-0 group-hover:opacity-80 group-hover:scale-110 transition-all duration-1000 ease-out" />
             <div className="relative z-20 w-full">
               <div className="font-display font-black text-white/50 text-3xl md:text-7xl mb-2 md:mb-4 group-hover:text-accent group-hover:-translate-y-2 transition-all duration-500">01</div>
               <h4 className="text-base md:text-3xl font-display font-black uppercase tracking-tight mb-2 md:mb-4 group-hover:-translate-y-2 transition-transform duration-500 text-white">{t('pillar1Title')}</h4>
@@ -226,7 +226,7 @@ export default function HomePageClient() {
           </div>
           <div className="group flex-1 border-b md:border-b-0 md:border-r border-white/20 hover:flex-[2.5] transition-all duration-[800ms] ease-[cubic-bezier(0.25,1,0.5,1)] relative overflow-hidden flex items-end p-8 md:p-12 hoverable cursor-pointer">
             <div className="absolute inset-0 bg-black/60 group-hover:bg-black/20 transition-colors duration-700 z-10 pointer-events-none" />
-            <img src="https://images.unsplash.com/photo-1541701494587-cb58502866ab?q=80&w=800&auto=format&fit=crop" alt="Visual Identity" className="absolute inset-0 w-full h-full object-cover grayscale opacity-40 group-hover:grayscale-0 group-hover:opacity-80 group-hover:scale-110 transition-all duration-1000 ease-out" />
+            <img src="/cases/nautilus.webp" alt="Visual Identity" className="absolute inset-0 w-full h-full object-cover grayscale opacity-40 group-hover:grayscale-0 group-hover:opacity-80 group-hover:scale-110 transition-all duration-1000 ease-out" />
             <div className="relative z-20 w-full">
               <div className="font-display font-black text-white/50 text-3xl md:text-7xl mb-2 md:mb-4 group-hover:text-accent group-hover:-translate-y-2 transition-all duration-500">02</div>
               <h4 className="text-base md:text-3xl font-display font-black uppercase tracking-tight mb-2 md:mb-4 group-hover:-translate-y-2 transition-transform duration-500 text-white">{t('pillar2Title')}</h4>
@@ -237,7 +237,7 @@ export default function HomePageClient() {
           </div>
           <div className="group flex-1 border-b md:border-b-0 md:border-r border-white/20 hover:flex-[2.5] transition-all duration-[800ms] ease-[cubic-bezier(0.25,1,0.5,1)] relative overflow-hidden flex items-end p-8 md:p-12 hoverable cursor-pointer">
             <div className="absolute inset-0 bg-black/60 group-hover:bg-black/20 transition-colors duration-700 z-10 pointer-events-none" />
-            <img src="https://images.unsplash.com/photo-1557672172-298e090bd0f1?q=80&w=800&auto=format&fit=crop" alt="Rebranding" className="absolute inset-0 w-full h-full object-cover grayscale opacity-40 group-hover:grayscale-0 group-hover:opacity-80 group-hover:scale-110 transition-all duration-1000 ease-out" />
+            <img src="/cases/arskammer.webp" alt="Rebranding" className="absolute inset-0 w-full h-full object-cover grayscale opacity-40 group-hover:grayscale-0 group-hover:opacity-80 group-hover:scale-110 transition-all duration-1000 ease-out" />
             <div className="relative z-20 w-full">
               <div className="font-display font-black text-white/50 text-3xl md:text-7xl mb-2 md:mb-4 group-hover:text-accent group-hover:-translate-y-2 transition-all duration-500">03</div>
               <h4 className="text-base md:text-3xl font-display font-black uppercase tracking-tight mb-2 md:mb-4 group-hover:-translate-y-2 transition-transform duration-500 text-white">{t('pillar3Title')}</h4>
@@ -248,7 +248,7 @@ export default function HomePageClient() {
           </div>
           <div className="group flex-1 hover:flex-[2.5] transition-all duration-[800ms] ease-[cubic-bezier(0.25,1,0.5,1)] relative overflow-hidden flex items-end p-8 md:p-12 hoverable cursor-pointer">
             <div className="absolute inset-0 bg-black/60 group-hover:bg-black/20 transition-colors duration-700 z-10 pointer-events-none" />
-            <img src="https://images.unsplash.com/photo-1507608616759-54f48f0af0ee?q=80&w=800&auto=format&fit=crop" alt="Consulting" className="absolute inset-0 w-full h-full object-cover grayscale opacity-40 group-hover:grayscale-0 group-hover:opacity-80 group-hover:scale-110 transition-all duration-1000 ease-out" />
+            <img src="/cases/durafa.webp" alt="Consulting" className="absolute inset-0 w-full h-full object-cover grayscale opacity-40 group-hover:grayscale-0 group-hover:opacity-80 group-hover:scale-110 transition-all duration-1000 ease-out" />
             <div className="relative z-20 w-full">
               <div className="font-display font-black text-white/50 text-3xl md:text-7xl mb-2 md:mb-4 group-hover:text-accent group-hover:-translate-y-2 transition-all duration-500">04</div>
               <h4 className="text-base md:text-3xl font-display font-black uppercase tracking-tight mb-2 md:mb-4 group-hover:-translate-y-2 transition-transform duration-500 text-white">{t('pillar4Title')}</h4>
@@ -302,7 +302,7 @@ export default function HomePageClient() {
         <div className="container mx-auto px-6 relative z-10">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-16 text-center">
             <div>
-              <div className="stat-num font-display text-5xl md:text-8xl text-accent mb-4" data-val="12" data-suffix=" anos">0</div>
+              <div className="stat-num font-display text-5xl md:text-8xl text-accent mb-4" data-val="11" data-suffix=" anos">0</div>
               <div className="text-xs uppercase tracking-widest text-muted">{t('statYears')}</div>
             </div>
             <div>

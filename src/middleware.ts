@@ -5,5 +5,5 @@ export default createMiddleware(routing);
 
 export const config = {
   // Aplica o middleware em todas as rotas exceto arquivos estáticos e APIs internas
-  matcher: ['/((?!_next|_vercel|.*\\..*).*)']
+  matcher: ['/((?!api|_next|_vercel|.*\\..*).*)']
 };

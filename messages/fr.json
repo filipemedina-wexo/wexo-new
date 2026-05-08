@@ -84,7 +84,7 @@
     "leadershipSection": "Notre Direction",
     "memberIndexLabel": "Notre Direction",
     "member1Title": "Associé Directeur",
-    "member1Bio": "+20 ans de communication, avec des projets développés dans les principales agences du Brésil, servant des marques internationales comme Samsung, GM, Embraer, Bradesco, Terra, entre autres. Spécialiste en gestion de projets et d'équipes, développement digital et leadership créatif. Lauréat Or et Argent au Wave Festival.",
+    "member1Bio": "+20 ans de communication, avec des projets développés dans les principales agences du Brésil, au serviço de marques internationales telles que Samsung, GM, Embraer, Bradesco, Terra, entre autres. Spécialiste de la gestion de projets et d'équipes, do desenvolvimento digital et du leadership créatif. Lauréat Or et Argent au Wave Festival.",
     "member1Tags": ["stratégie", "affaires", "digital", "dev", "ia", "trafic payant", "seo", "intégrations", "planification", "réseaux sociaux", "vidéo"],
     "member2Title": "Associé Directeur",
     "member2Bio": "+30 ans de Branding de projets avec +500 marques créées pour de grands acteurs du marché, spécialiste en Branding et Création, responsable de la production de matériaux pour les lancements, salons, événements et communication externe.",
@@ -143,15 +143,21 @@
     "divider": "ou préférez laisser vos coordonnées",
     "nameLabel": "Nom",
     "namePlaceholder": "Votre nom",
-    "contactLabel": "Email ou WhatsApp",
-    "contactPlaceholder": "Comment nous pouvons vous contacter",
-    "projectLabel": "Sur le projet",
-    "projectOptional": "optionnel",
-    "projectPlaceholder": "Dites-nous où en est votre entreprise... ça peut être bref.",
+    "companyLabel": "Entreprise",
+    "companyPlaceholder": "Nom de votre entreprise",
+    "emailLabel": "Email",
+    "emailPlaceholder": "votre@email.com",
+    "phoneLabel": "Téléphone / WhatsApp",
+    "phonePlaceholder": "+00 00000-0000",
+    "messageLabel": "Message",
+    "messagePlaceholder": "Comment Wexo peut aider votre entreprise ? Peut être bref.",
     "submit": "Envoyer",
-    "emailLabel": "Email Direct",
+    "directEmailLabel": "Email Direct",
     "locationLabel": "Localisation",
-    "location": "Trend City Center · Porto Alegre, RS"
+    "location": "Trend City Center · Porto Alegre, RS",
+    "successMessage": "Message envoyé avec succès !",
+    "errorMessage": "Une erreur est survenue lors de l'envoi. Veuillez réessayer.",
+    "sending": "Envoi en cours..."
   },
   "Footer": {
     "nav1": "Wexo",
@@ -163,5 +169,31 @@
     "nav3": "Réseaux",
     "copyright": "Tous droits réservés.",
     "brand": "Marque créée par Wexo elle-même"
+  },
+  "Metadata": {
+    "default": {
+      "title": "Wexo | High Performance Digital Experience",
+      "description": "Cabinet de conseil créatif en marque pour les entreprises recherchant un positionnement premium e une différenciation stratégique."
+    },
+    "home": {
+      "title": "Wexo | Les marques qui animent les affaires",
+      "description": "Nous transformons les marques par le design, la technologie et la stratégie pour les entreprises qui refusent de concourir sur les prix."
+    },
+    "about": {
+      "title": "À propos de Wexo | Conseil Créatif",
+      "description": "Découvrez l'histoire et la direction de Wexo. Nous allions l'expertise du marché immobilier e un design de haute performance."
+    },
+    "services": {
+      "title": "Nos Services | Branding et Design",
+      "description": "Stratégie de marque, Identité Visuelle, Rebranding e Conseil Continu pour élever votre positionnement."
+    },
+    "cases": {
+      "title": "Nos Cases | Portefeuille Wexo",
+      "description": "Explorez nosso univers de transformations. Des marques qui impactent les marchés e génèrent une valeur réelle."
+    },
+    "contact": {
+      "title": "Contact | Commencez votre Transformation",
+      "description": "Parlez à Wexo e découvrez comment nous pouvons aider votre entreprise à se démarquer grâce à une marque forte."
+    }
   }
 }

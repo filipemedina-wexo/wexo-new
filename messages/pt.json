@@ -49,7 +49,7 @@
     "manifestoLine4": "Marca é o que as pessoas sentem",
     "manifestoLine5": "quando você para de falar.",
     "manifestoCaption": "Trabalhamos para empresas que entenderam que brand é o ativo mais valioso que existe — e que ainda não investiram nele como merecem.",
-    "manifestoStat": "Apenas 37% dos profissionais conseguem integrar branding e performance na prática. Nós ajudamos empresas a entrar nessa estatística.",
+    "manifestoStat": "81% dos consumidores precisam confiar na marca para considerarem uma compra. Nós ajudamos empresas a construir essa percepção de valor.",
     "pilaresLabel": "Nossos Pilares",
     "pilaresHeading": "O que entregamos",
     "pillar1Title": "Brand Strategy",
@@ -143,15 +143,21 @@
     "divider": "ou prefere deixar seus dados",
     "nameLabel": "Nome",
     "namePlaceholder": "Seu nome",
-    "contactLabel": "E-mail ou WhatsApp",
-    "contactPlaceholder": "Como a gente te encontra",
-    "projectLabel": "Sobre o projeto",
-    "projectOptional": "opcional",
-    "projectPlaceholder": "Me conta um pouco do momento da sua empresa... pode ser curto.",
+    "companyLabel": "Empresa",
+    "companyPlaceholder": "Nome da sua empresa",
+    "emailLabel": "E-mail",
+    "emailPlaceholder": "seu@email.com",
+    "phoneLabel": "Telefone / WhatsApp",
+    "phonePlaceholder": "(00) 00000-0000",
+    "messageLabel": "Mensagem",
+    "messagePlaceholder": "Como a Wexo pode ajudar seu negócio? Pode ser curto.",
     "submit": "Enviar",
-    "emailLabel": "Email Direto",
+    "directEmailLabel": "Email Direto",
     "locationLabel": "Localização",
-    "location": "Trend City Center · Porto Alegre, RS"
+    "location": "Trend City Center · Porto Alegre, RS",
+    "successMessage": "Mensagem enviada com sucesso!",
+    "errorMessage": "Ocorreu um erro ao enviar. Tente novamente.",
+    "sending": "Enviando..."
   },
   "Footer": {
     "nav1": "Wexo",
@@ -163,5 +169,31 @@
     "nav3": "Redes",
     "copyright": "Todos os direitos reservados.",
     "brand": "Marca criada pela própria Wexo"
+  },
+  "Metadata": {
+    "default": {
+      "title": "Wexo | High Performance Digital Experience",
+      "description": "Consultoria criativa de marca para empresas que buscam posicionamento premium e diferenciação estratégica."
+    },
+    "home": {
+      "title": "Wexo | Marcas que movem negócios",
+      "description": "Transformamos marcas através de design, tecnologia e estratégia para empresas que não aceitam competir por preço."
+    },
+    "about": {
+      "title": "Sobre a Wexo | Consultoria Criativa",
+      "description": "Conheça a história e a liderança por trás da Wexo. Unimos expertise de mercado imobiliário e design de alta performance."
+    },
+    "services": {
+      "title": "Nossos Serviços | Branding e Design",
+      "description": "Estratégia de marca, Identidade Visual, Rebranding e Consultoria Contínua para elevar seu posicionamento."
+    },
+    "cases": {
+      "title": "Nossos Cases | Portfólio Wexo",
+      "description": "Explore nosso universo de transformações. Marcas que impactam mercados e geram valor real."
+    },
+    "contact": {
+      "title": "Contato | Vamos Iniciar sua Transformação",
+      "description": "Fale com a Wexo e descubra como podemos ajudar sua empresa a se destacar através de uma marca forte."
+    }
   }
 }

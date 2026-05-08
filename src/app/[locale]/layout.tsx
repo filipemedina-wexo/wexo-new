@@ -9,6 +9,37 @@ import Footer from '@/components/Footer';
 import CustomCursor from '@/components/CustomCursor';
 import SmoothScroll from '@/components/SmoothScroll';
 import IntroScreen from '@/components/IntroScreen';
+import { GoogleAnalytics } from '@next/third-parties/google';
+import AnalyticsTracker from '@/components/AnalyticsTracker';
+import type { Metadata } from 'next';
+import { getTranslations } from 'next-intl/server';
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: 'Metadata.default' });
+  
+  return {
+    title: t('title'),
+    description: t('description'),
+    openGraph: {
+      title: t('title'),
+      description: t('description'),
+      images: [
+        {
+          url: '/og-image.png',
+          width: 1200,
+          height: 630,
+        },
+      ],
+      locale: locale,
+      type: 'website',
+    },
+    icons: {
+      icon: '/favicon.ico',
+      apple: '/apple-touch-icon.png',
+    },
+  };
+}
 
 const montserrat = Montserrat({
   weight: ['400', '700', '900'],
@@ -45,6 +76,8 @@ export default async function LocaleLayout({
   return (
     <html lang={locale}>
       <body className={`antialiased selection:bg-accent selection:text-white ${montserrat.variable} ${dmSans.variable}`}>
+        <GoogleAnalytics gaId="G-MCSE6WH500" />
+        <AnalyticsTracker />
         <NextIntlClientProvider messages={messages}>
           <SmoothScroll>
             <IntroScreen />

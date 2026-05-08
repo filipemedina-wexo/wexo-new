@@ -13,7 +13,7 @@ export default async function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
           <div className="col-span-1 md:col-span-1 flex flex-col justify-between">
             <Link href="/" className="relative w-20 h-20 mb-8 hoverable">
-              <Image src="/logo-sq.png" alt="Wexo Icon" fill className="object-contain opacity-80 hover:opacity-100 transition-opacity" />
+              <Image src="/logo-sq.png" alt="Wexo Icon" fill className="object-contain opacity-80 hover:opacity-100 transition-opacity" sizes="80px" />
             </Link>
           </div>
 
