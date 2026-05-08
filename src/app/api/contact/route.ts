@@ -1,5 +1,9 @@
 import { NextResponse } from 'next/server';
 
+export async function GET() {
+  return NextResponse.json({ status: 'API de contato ativa', method: 'POST required' });
+}
+
 export async function POST(request: Request) {
   try {
     const data = await request.json();

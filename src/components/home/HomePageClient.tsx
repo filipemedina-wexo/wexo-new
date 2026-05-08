@@ -41,26 +41,38 @@ export default function HomePageClient() {
         }
 
         cellsToReplace.forEach((cellIndex, idx) => {
-          gsap.to(`.client-logo-wrapper-${cellIndex} .inner-flipper`, {
-            rotateX: 90,
-            opacity: 0,
-            duration: 0.3,
-            ease: "power2.in",
-            onComplete: () => {
-               setActiveLogos(current => {
-                 const newArr = [...current];
-                 newArr[cellIndex] = newLogos[idx]!;
-                 return newArr;
-               });
-               gsap.to(`.client-logo-wrapper-${cellIndex} .inner-flipper`, {
-                 rotateX: 0,
-                 opacity: 1,
-                 duration: 0.4,
-                 ease: "back.out(1.5)",
-                 delay: 0.05
-               });
-            }
-          });
+          const wrapper = containerRef.current?.querySelector(`.client-logo-wrapper-${cellIndex}`);
+          const target = wrapper?.querySelector(`.inner-flipper`);
+          
+          if (target) {
+            gsap.to(target, {
+              rotateX: 90,
+              opacity: 0,
+              duration: 0.3,
+              ease: "power2.in",
+              onComplete: () => {
+                 setActiveLogos(current => {
+                   const newArr = [...current];
+                   newArr[cellIndex] = newLogos[idx]!;
+                   return newArr;
+                 });
+                 
+                 // Re-select target after state update to ensure we have the right DOM element
+                 setTimeout(() => {
+                   const nextTarget = containerRef.current?.querySelector(`.client-logo-wrapper-${cellIndex} .inner-flipper`);
+                   if (nextTarget) {
+                     gsap.to(nextTarget, {
+                       rotateX: 0,
+                       opacity: 1,
+                       duration: 0.4,
+                       ease: "back.out(1.5)",
+                       delay: 0.05
+                     });
+                   }
+                 }, 50);
+              }
+            });
+          }
         });
 
         return prev;
