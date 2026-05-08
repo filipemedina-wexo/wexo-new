@@ -9,7 +9,7 @@ import { useSearchParams } from 'next/navigation';
 const WHATSAPP_URL = 'https://wa.me/555181610066';
 const INSTAGRAM_URL = 'https://instagram.com/wexocreative';
 // Usamos nossa API interna como proxy para evitar erros de CORS no n8n
-const WEBHOOK_URL = '/webhooks/contact';
+const WEBHOOK_URL = '/webhooks/contact/';
 
 export default function ContatoPage() {
   const t = useTranslations('Contact');
@@ -79,11 +79,11 @@ export default function ContatoPage() {
     e.preventDefault();
     setStatus('sending');
 
-    // Captura UTMs da URL
+    // Captura UTMs da URL ou do sessionStorage (para persistência entre páginas)
     const utms = {
-      utm_source: searchParams.get('utm_source') || '',
-      utm_medium: searchParams.get('utm_medium') || '',
-      utm_campaign: searchParams.get('utm_campaign') || '',
+      utm_source: searchParams.get('utm_source') || (typeof window !== 'undefined' ? sessionStorage.getItem('utm_source') : '') || '',
+      utm_medium: searchParams.get('utm_medium') || (typeof window !== 'undefined' ? sessionStorage.getItem('utm_medium') : '') || '',
+      utm_campaign: searchParams.get('utm_campaign') || (typeof window !== 'undefined' ? sessionStorage.getItem('utm_campaign') : '') || '',
     };
 
     const payload = {

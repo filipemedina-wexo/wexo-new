@@ -9,6 +9,17 @@ import { sendGAEvent } from '@next/third-parties/google';
  */
 export default function AnalyticsTracker() {
   useEffect(() => {
+    // Captura e persiste UTMs se existirem na URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const utms = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content'];
+    
+    utms.forEach(param => {
+      const value = urlParams.get(param);
+      if (value) {
+        sessionStorage.setItem(param, value);
+      }
+    });
+
     const handleGlobalClick = (event: MouseEvent) => {
       const target = event.target as HTMLElement;
       

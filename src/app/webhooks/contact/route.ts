@@ -18,12 +18,19 @@ export async function POST(request: Request) {
     if (!response.ok) {
       const errorText = await response.text();
       console.error('Erro no webhook n8n:', errorText);
-      return NextResponse.json({ error: 'Erro ao enviar para o webhook' }, { status: response.status });
+      return NextResponse.json({ 
+        error: 'Erro retornado pelo n8n', 
+        n8n_status: response.status,
+        n8n_response: errorText 
+      }, { status: response.status });
     }
 
     return NextResponse.json({ success: true });
-  } catch (error) {
+  } catch (error: any) {
     console.error('Erro na API de contato:', error);
-    return NextResponse.json({ error: 'Erro interno no servidor' }, { status: 500 });
+    return NextResponse.json({ 
+      error: 'Erro interno no servidor do site', 
+      details: error.message 
+    }, { status: 500 });
   }
 }
