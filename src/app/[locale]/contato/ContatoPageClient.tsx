@@ -9,7 +9,7 @@ import { useSearchParams } from 'next/navigation';
 const WHATSAPP_URL = 'https://wa.me/555181610066';
 const INSTAGRAM_URL = 'https://instagram.com/wexocreative';
 // Usamos nossa API interna como proxy para evitar erros de CORS no n8n
-const WEBHOOK_URL = '/api/contact';
+const WEBHOOK_URL = '/webhooks/contact';
 
 export default function ContatoPage() {
   const t = useTranslations('Contact');
