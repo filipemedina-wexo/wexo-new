@@ -28,6 +28,10 @@ export async function POST(request: Request) {
     // Pega o resultado do webhook de produção (índice 0) para o retorno oficial
     const prodResult = results[0];
     
+    if (!prodResult) {
+      return NextResponse.json({ error: 'Erro interno: nenhum resultado obtido' }, { status: 500 });
+    }
+
     if (prodResult.status === 'rejected') {
       console.error('Erro de rede ao chamar o webhook n8n de produção:', prodResult.reason);
       return NextResponse.json({ 
