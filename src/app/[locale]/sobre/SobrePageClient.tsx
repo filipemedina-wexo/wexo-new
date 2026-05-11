@@ -173,7 +173,7 @@ export default function SobrePage() {
                 <div className="text-xs uppercase tracking-widest text-muted font-body leading-tight">{t('stat1Label')}</div>
               </div>
               <div className="sobre-stat px-5 py-6 border-b sm:border-b-0 sm:border-r border-white/10">
-                <div className="font-display font-black text-3xl md:text-5xl text-accent mb-1">+500</div>
+                <div className="font-display font-black text-3xl md:text-5xl text-accent mb-1">+300</div>
                 <div className="text-xs uppercase tracking-widest text-muted font-body leading-tight">{t('stat2Label')}</div>
               </div>
               <div className="sobre-stat px-5 py-6">

@@ -318,7 +318,7 @@ export default function HomePageClient() {
               <div className="text-xs uppercase tracking-widest text-muted">{t('statYears')}</div>
             </div>
             <div>
-              <div className="stat-num font-display text-5xl md:text-8xl text-accent mb-4" data-val="40" data-prefix="+">0</div>
+              <div className="stat-num font-display text-5xl md:text-8xl text-accent mb-4" data-val="300" data-prefix="+">0</div>
               <div className="text-xs uppercase tracking-widest text-muted">{t('statProjects')}</div>
             </div>
             <div>
