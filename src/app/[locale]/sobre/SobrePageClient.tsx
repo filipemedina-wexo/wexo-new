@@ -6,6 +6,7 @@ import { Link } from '@/i18n/routing';
 import { useTranslations } from 'next-intl';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import FAQ from '@/components/FAQ';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -233,7 +234,7 @@ export default function SobrePage() {
               <h3 className="font-display text-2xl md:text-4xl lg:text-5xl leading-tight max-w-3xl">
                 {t.rich('value1', {
                   accent: (chunks) => <span className="text-accent">{chunks}</span>,
-                  strike: (chunks) => <span className="line-through text-white/30">{chunks}</span>,
+                  bold: (chunks) => <strong className="font-bold text-white">{chunks}</strong>,
                 })}
               </h3>
             </div>
@@ -243,7 +244,7 @@ export default function SobrePage() {
               <h3 className="font-display text-2xl md:text-4xl lg:text-5xl leading-tight max-w-3xl">
                 {t.rich('value2', {
                   accent: (chunks) => <span className="text-accent italic">{chunks}</span>,
-                  strike: (chunks) => <span className="line-through text-white/30">{chunks}</span>,
+                  bold: (chunks) => <strong className="font-bold text-white">{chunks}</strong>,
                 })}
               </h3>
             </div>
@@ -260,6 +261,9 @@ export default function SobrePage() {
           </div>
         </div>
       </section>
+
+      {/* ─── FAQ ──────────────────────────────────────────────── */}
+      <FAQ />
 
       {/* ─── CTA ──────────────────────────────────────────────── */}
       <section className="py-32 border-t border-white/10 bg-brand-surface text-center px-6">

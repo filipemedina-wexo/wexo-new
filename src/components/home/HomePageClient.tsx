@@ -5,6 +5,7 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/routing';
+import FAQ from '@/components/FAQ';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -329,7 +330,10 @@ export default function HomePageClient() {
         </div>
       </section>
 
-      {/* SEÇÃO 6 — CTA Final */}
+      {/* SEÇÃO 6 — FAQ */}
+      <FAQ />
+
+      {/* SEÇÃO 7 — CTA Final */}
       <section className="min-h-[80vh] flex flex-col justify-center items-center text-center px-6 relative">
         <h2 className="font-display text-2xl sm:text-3xl md:text-6xl mb-8 md:mb-12 max-w-4xl leading-tight">
           {t('ctaHeading')} <span className="italic text-accent">{t('ctaAccent')}</span>

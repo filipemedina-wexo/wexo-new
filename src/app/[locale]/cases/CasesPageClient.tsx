@@ -81,8 +81,21 @@ export default function CasesPage() {
   const [hasDragged, setHasDragged] = useState(false);
   const [showHint, setShowHint] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
+  const [modalMaxW, setModalMaxW] = useState('100%');
 
-  useEffect(() => { setIsMobile(window.innerWidth < 768); }, []);
+  useEffect(() => {
+    setIsMobile(window.innerWidth < 768);
+    const updateSize = () => {
+      // lg: inset-8 (32px), md: inset-6 (24px), base: inset-4 (16px)
+      const padding = window.innerWidth >= 1024 ? 32 : window.innerWidth >= 768 ? 24 : 16;
+      const availableHeight = window.innerHeight - padding * 2;
+      // Also ensure it doesn't exceed 1920px or the available width
+      setModalMaxW(`${Math.min(1920, availableHeight * (16 / 9))}px`);
+    };
+    updateSize();
+    window.addEventListener('resize', updateSize);
+    return () => window.removeEventListener('resize', updateSize);
+  }, []);
 
   const cardScale = isMobile ? 0.48 : 1;
   const effectiveCanvasW = Math.round(canvasWidth * cardScale);
@@ -138,6 +151,7 @@ export default function CasesPage() {
   }, [showHint]);
 
   useEffect(() => {
+    window.scrollTo(0, 0);
     document.body.style.overflow = 'hidden';
     const ctx = gsap.context(() => {
       gsap.fromTo('.cases-title', { y: 50, opacity: 0 }, { y: 0, opacity: 1, duration: 1, ease: 'power3.out', delay: 0.2 });
@@ -241,8 +255,11 @@ export default function CasesPage() {
         <div className="absolute inset-0 bg-[#0A0A0F]/80 backdrop-blur-[20px]" onClick={closeCase} />
 
         {selectedCase && (
-          <div className="absolute inset-4 md:inset-8 lg:inset-12 flex items-center justify-center pointer-events-none">
-            <div className="relative w-full max-w-[1920px] aspect-video bg-[#0A0A0F] border border-white/10 shadow-2xl rounded-2xl md:rounded-3xl overflow-hidden pointer-events-auto">
+          <div className="absolute inset-4 md:inset-6 lg:inset-8 flex items-center justify-center pointer-events-none">
+            <div 
+              className="relative w-full aspect-video bg-[#0A0A0F] border border-white/10 shadow-2xl rounded-2xl md:rounded-3xl overflow-hidden pointer-events-auto"
+              style={{ maxWidth: modalMaxW, maxHeight: '100%' }}
+            >
 
               {/* Fechar */}
               <button onClick={closeCase} className="absolute top-3 right-3 md:top-6 md:right-6 z-50 w-8 h-8 md:w-12 md:h-12 bg-black/50 hover:bg-white text-white hover:text-black rounded-full flex items-center justify-center transition-colors backdrop-blur-md border border-white/10">
@@ -256,7 +273,7 @@ export default function CasesPage() {
                 </div>
               ))}
 
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/30 pointer-events-none" />
+              <div className="absolute inset-0 z-20 bg-gradient-to-t from-black/80 via-transparent to-black/30 pointer-events-none" />
 
               {/* Arrows do modal */}
               {selectedCase.images.length > 1 && (
@@ -269,7 +286,7 @@ export default function CasesPage() {
                   </button>
                   <button
                     onClick={() => setModalSlide(s => (s + 1) % selectedCase.images.length)}
-                    className="absolute right-2 md:right-20 top-1/2 -translate-y-1/2 z-50 w-8 h-8 md:w-12 md:h-12 bg-black/50 hover:bg-white text-white hover:text-black rounded-full flex items-center justify-center transition-colors backdrop-blur-md border border-white/10"
+                    className="absolute right-2 md:right-8 top-1/2 -translate-y-1/2 z-50 w-8 h-8 md:w-12 md:h-12 bg-black/50 hover:bg-white text-white hover:text-black rounded-full flex items-center justify-center transition-colors backdrop-blur-md border border-white/10"
                   >
                     <svg width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M6 3l5 5-5 5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" /></svg>
                   </button>
@@ -288,12 +305,12 @@ export default function CasesPage() {
               )}
 
               {/* Logo */}
-              <div className="absolute top-3 left-3 md:top-8 md:left-8 lg:top-12 lg:left-12 opacity-80 pointer-events-none">
+              <div className="absolute top-3 left-3 md:top-8 md:left-8 lg:top-12 lg:left-12 opacity-80 pointer-events-none z-30">
                 <Image src="/logo.png" alt="Wexo" width={64} height={20} className="object-contain md:w-[100px] md:h-[32px]" />
               </div>
 
               {/* Nome */}
-              <div className="absolute bottom-3 left-3 md:bottom-8 md:left-8 lg:bottom-12 lg:left-12 pointer-events-none">
+              <div className="absolute bottom-3 left-3 md:bottom-8 md:left-8 lg:bottom-12 lg:left-12 pointer-events-none z-30">
                 <span className="text-accent text-[8px] md:text-[10px] uppercase tracking-[0.3em] font-display mb-1 block">{selectedCase.client}</span>
                 <h2 className="font-display text-lg md:text-7xl lg:text-[6rem] leading-none text-white drop-shadow-2xl">
                   {selectedCase.project ?? selectedCase.client}
@@ -315,7 +332,7 @@ export default function CasesPage() {
       {/* ── CANVAS VIEWPORT ───────────────────────────────────── */}
       <div
         ref={containerRef}
-        className="fixed inset-0 w-full h-screen overflow-hidden bg-[#0A0A0F] cursor-grab active:cursor-grabbing touch-none select-none"
+        className="fixed inset-0 w-full h-screen overflow-hidden bg-[#0A0A0F] cursor-grab active:cursor-grabbing touch-none select-none z-40"
         style={{
           backgroundImage: 'radial-gradient(circle, rgba(255,255,255,0.18) 1px, transparent 1px)',
           backgroundSize: '36px 36px',

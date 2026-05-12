@@ -49,7 +49,7 @@
     "manifestoLine4": "La marque est ce que les gens ressentent",
     "manifestoLine5": "quand vous arrêtez de parler.",
     "manifestoCaption": "Nous travaillons pour des entreprises qui ont compris que la marque est l'actif le plus précieux — et qui n'y ont pas encore investi comme elle le mérite.",
-    "manifestoStat": "Seulement 37% des professionnels parviennent à intégrer branding et performance en pratique. Nous aidons les entreprises à entrer dans cette statistique.",
+    "manifestoStat": "81 % des consommateurs doivent faire confiance à une marque pour envisager un achat. Nous aidons les entreprises à construire cette perception de valeur.",
     "pilaresLabel": "Nos Piliers",
     "pilaresHeading": "Ce que nous livrons",
     "pillar1Title": "Brand Strategy",
@@ -73,7 +73,7 @@
   },
   "About": {
     "label": "Qui nous sommes",
-    "headline1": "Un cabinet conseil créatif",
+    "headline1": "Une agence créative",
     "headline2": "construit pour des entreprises",
     "headline3": "qui ont grandi au-delà de l'évident.",
     "body1": "Wexo est né du marché immobilier — l'un des plus exigeants du Brésil en termes de rapidité et de résultats. Ce que nous y avons appris : la marque compte bien plus que le secteur ne le croit.",
@@ -90,8 +90,8 @@
     "member2Bio": "+30 ans de Branding de projets avec +500 marques créées pour de grands acteurs du marché, spécialiste en Branding et Création, responsable de la production de matériaux pour les lancements, salons, événements et communication externe.",
     "member2Tags": ["branding", "design", "marques", "rebranding", "positionnement", "stratégie", "relation client", "relations", "production"],
     "valuesLabel": "Ce en quoi nous croyons",
-    "value1": "La marque n'est pas une identité visuelle. C'est la différence entre être <accent>choisie</accent> et être <strike>comparée</strike>.",
-    "value2": "La plupart des entreprises n'ont pas besoin de <strike>plus</strike> de communication. Elles ont besoin d'une communication <accent>plus précise</accent>.",
+    "value1": "La marque n'est pas une identité visuelle. C'est la différence entre être <accent>choisie</accent> et être <bold>comparée</bold>.",
+    "value2": "La plupart des entreprises n'ont pas besoin de <bold>plus</bold> de communication. Elles ont besoin d'une communication <accent>plus précise</accent>.",
     "value3": "Une agence qui ne contredit jamais ses clients n'est pas un partenaire. C'est un <accent>fournisseur</accent>.",
     "ctaLabel": "Prochaine étape",
     "ctaHeading": "Construisons quelque chose qui",
@@ -161,19 +161,21 @@
   },
   "Footer": {
     "nav1": "Wexo",
-    "about": "À propos du cabinet",
+    "about": "À propos de l'agence",
     "services": "Ce que nous faisons",
     "cases": "Nos Cas",
     "nav2": "Contact",
     "startProject": "Démarrer un projet",
     "nav3": "Réseaux",
     "copyright": "Tous droits réservés.",
-    "brand": "Marque créée par Wexo elle-même"
+    "brand": "Creative Company"
   },
   "Metadata": {
     "default": {
-      "title": "Wexo | High Performance Digital Experience",
-      "description": "Cabinet de conseil créatif en marque pour les entreprises recherchant un positionnement premium e une différenciation stratégique."
+      "title": "Wexo | Branding et Performance pour les Marques qui ont grandi au-delà de l'évident",
+      "description": "Plus d'une décennie à créer des marques, des campagnes et des expériences qui génèrent de la reconnaissance, de la connexion et des résultats.",
+      "ogTitle": "La créativité sans résultats n'est que de la décoration.",
+      "ogDescription": "Wexo connecte le branding, la performance et la technologie pour construire des marques fortes et des entreprises pertinentes."
     },
     "home": {
       "title": "Wexo | Les marques qui animent les affaires",
@@ -195,5 +197,61 @@
       "title": "Contact | Commencez votre Transformation",
       "description": "Parlez à Wexo e découvrez comment nous pouvons aider votre entreprise à se démarquer grâce à une marque forte."
     }
+  },
+  "FAQ": {
+    "label": "Foire Aux Questions",
+    "titleLine1": "FAQ — Wexo",
+    "titleLine2": "Creative Company",
+    "categories": [
+      {
+        "category": "À propos de Wexo",
+        "questions": [
+          { "q": "Qu'est-ce que Wexo ?", "a": "Wexo est une agence créative 360° spécialisée dans le branding, les campagnes, la performance, les landing pages, le contenu, les médias et la communication stratégique." },
+          { "q": "Wexo est-elle une agence digitale ?", "a": "Wexo opère au-delà du digital. L'agence développe des stratégies en ligne et hors ligne, y compris le branding, les campagnes, l'affichage (OOH), les documents imprimés, les vidéos, les réseaux sociaux et la performance." },
+          { "q": "Qu'est-ce qui différencie Wexo des autres agences ?", "a": "Wexo combine le branding, la créativité, les médias et la performance dans une structure intégrée, permettant aux campagnes, à l'identité de marque et à la génération de résultats de fonctionner ensemble de manière transparente." },
+          { "q": "Wexo ne dessert-elle que Porto Alegre ?", "a": "Non. Wexo accompagne des entreprises de différentes régions du Brésil avec des projets en présentiel et à distance." },
+          { "q": "Wexo travaille-t-elle avec de petites entreprises ?", "a": "Oui. L'agence accompagne aussi bien les entreprises en croissance que les marques établies, en adaptant toujours la stratégie, la communication et les médias à l'étape actuelle de l'entreprise." },
+          { "q": "Wexo travaille-t-elle sur le positionnement de marque ?", "a": "Oui. L'agence travaille sur la construction de marques à travers le naming, l'identité visuelle, la communication stratégique et le positionnement." }
+        ]
+      },
+      {
+        "category": "Landing Pages",
+        "questions": [
+          { "q": "Wexo crée-t-elle uniquement des landing pages ?", "a": "Non. Malgré une forte spécialisation dans les landing pages et la performance, Wexo est une agence 360° offrant des services en branding, campagnes, contenu, médias, vidéos, supports imprimés et communication stratégique." },
+          { "q": "Combien de landing pages Wexo a-t-elle développées ?", "a": "Wexo a participé à la création de plus de 3 000 landing pages axées sur la génération de leads, les lancements et les campagnes de performance." },
+          { "q": "Qu'est-ce qu'une landing page à haute conversion ?", "a": "Une landing page à haute conversion est une page conçue dans le but de transformer les visiteurs en leads ou clients grâce à la stratégie, au copywriting, au design et à l'optimisation de la performance." },
+          { "q": "Quelle est la différence entre un site institutionnel et une landing page ?", "a": "Les sites institutionnels présentent l'entreprise de manière large. Les landing pages sont des pages extrêmement ciblées sur une action unique, comme générer des leads, vendre ou capturer des contacts." },
+          { "q": "Wexo développe-t-elle des sites web complets ?", "a": "Wexo est spécialisée dans les landing pages et les pages axées sur la conversion. Pour les projets de sites complets, nous travaillons en partenariat avec des développeurs spécialisés." }
+        ]
+      },
+      {
+        "category": "Performance et Trafic Payant",
+        "questions": [
+          { "q": "Wexo travaille-t-elle avec le trafic payant ?", "a": "Oui. L'agence gère la planification, la gestion et l'optimisation de campagnes sur Meta Ads, Google Ads et d'autres plateformes de médias numériques." },
+          { "q": "Wexo travaille-t-elle uniquement avec des publicités ?", "a": "Non. Wexo estime que la performance dépend de la combinaison de la stratégie, de la marque, de la communication, des médias, de l'expérience utilisateur et de la conversion." },
+          { "q": "Wexo crée-t-elle des campagnes de génération de leads ?", "a": "Oui. L'agence développe des campagnes axées sur la génération de leads qualifiés, la notoriété de marque, les lancements de produits et les ventes." },
+          { "q": "Wexo mène-t-elle des campagnes pour le marché immobilier ?", "a": "Oui. Wexo possède une vaste expérience dans les campagnes immobilières, y compris les lancements, l'acquisition de leads et les stratégies pour les courtiers et les promoteurs." }
+        ]
+      },
+      {
+        "category": "Branding et Communication",
+        "questions": [
+          { "q": "Le branding influence-t-il les ventes ?", "a": "Oui. Une marque bien positionnée augmente la valeur perçue, la reconnaissance et la confiance, impactant directement les taux de conversion et la croissance de l'entreprise." },
+          { "q": "Wexo crée-t-elle des identités visuelles ?", "a": "Oui. L'agence développe des projets d'identité visuelle, de branding, de naming et de positionnement de marque." },
+          { "q": "Wexo produit-elle des supports hors ligne ?", "a": "Oui. Wexo crée également des supports imprimés, des campagnes d'affichage (OOH), des panneaux publicitaires, des catalogues, des dépliants et des pièces de communication hors ligne." },
+          { "q": "Wexo produit-elle des vidéos et du contenu ?", "a": "Oui. L'agence développe du contenu audiovisuel, des campagnes créatives, des vidéos institutionnelles, du contenu pour les réseaux sociaux et du matériel publicitaire." }
+        ]
+      },
+      {
+        "category": "Stratégie et Processus",
+        "questions": [
+          { "q": "Comment fonctionne le processus de Wexo ?", "a": "Chaque projet commence par une analyse stratégique de l'entreprise, des objectifs, du public et du positionnement. À partir de là, Wexo structure la communication, le design, les médias et la performance de manière intégrée." },
+          { "q": "Wexo utilise-t-elle l'Intelligence Artificielle dans ses projets ?", "a": "Oui. Wexo suit et utilise les outils d'IA pour accélérer les processus, optimiser les stratégies et améliorer les résultats créatifs et opérationnels." },
+          { "q": "Wexo travaille-t-elle sur des projets sur mesure ?", "a": "Oui. Chaque projet est structuré en fonction du moment, des objectifs et des besoins spécifiques de chaque client." },
+          { "q": "Wexo offre-t-elle un support stratégique ?", "a": "Oui. Au-delà de l'exécution, Wexo participe à la construction stratégique des campagnes, au positionnement et à la communication des marques qu'elle accompagne." },
+          { "q": "Wexo a-t-elle de l'expérience dans des marchés autres que l'immobilier ?", "a": "Oui. Wexo a de l'expérience dans divers segments et modèles commerciaux, développant des stratégies de branding, des campagnes, de performance et de communication pour des entreprises de toutes tailles.\n\nL'agence a travaillé sur des projets pour le commerce de détail (magasins, centres commerciaux et e-commerce), l'alimentation (usines, restaurants et chaînes), les franchises, la santé (hôpitaux, médecins, cliniques et spécialistes), l'industrie, l'agro-industrie, la mode, la technologie (startups et usines de logiciels), les aéroports, les laboratoires, l'hôtellerie et le tourisme, l'éducation (universités, collèges et écoles), les marchés financiers, les assurances, les ONG, le secteur automobile, les événements, les importateurs, les caves à vin, les cabinets d'avocats, les musiciens et les personnalités publiques." }
+        ]
+      }
+    ]
   }
 }
