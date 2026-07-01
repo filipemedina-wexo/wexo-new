@@ -1,14 +1,18 @@
 'use client';
 
-import { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { useId, useState } from 'react';
+import { motion } from 'framer-motion';
 import { useTranslations } from 'next-intl';
 
 function FAQItem({ q, a, isOpen, onClick }: { q: string, a: string, isOpen: boolean, onClick: () => void }) {
+  const answerId = useId();
+
   return (
     <div className="border-b border-white/10 overflow-hidden">
       <button 
         onClick={onClick}
+        aria-expanded={isOpen}
+        aria-controls={answerId}
         className="w-full py-5 flex justify-between items-center text-left hover:text-accent transition-colors duration-300 group"
       >
         <span className="font-display font-bold text-base md:text-lg pr-8">{q}</span>
@@ -18,20 +22,17 @@ function FAQItem({ q, a, isOpen, onClick }: { q: string, a: string, isOpen: bool
           </svg>
         </span>
       </button>
-      <AnimatePresence>
-        {isOpen && (
-          <motion.div
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: 'auto', opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.3, ease: 'easeInOut' }}
-          >
-            <div className="pb-6 text-muted font-body text-sm leading-relaxed max-w-2xl whitespace-pre-line">
-              {a}
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+      <motion.div
+        id={answerId}
+        initial={false}
+        animate={isOpen ? { height: 'auto', opacity: 1 } : { height: 0, opacity: 0 }}
+        transition={{ duration: 0.3, ease: 'easeInOut' }}
+        className="overflow-hidden"
+      >
+        <div className="pb-6 text-muted font-body text-sm leading-relaxed max-w-2xl whitespace-pre-line">
+          {a}
+        </div>
+      </motion.div>
     </div>
   );
 }
@@ -46,6 +47,21 @@ export default function FAQ() {
     questions: Array<{ q: string; a: string }>;
   }>;
 
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: categories.flatMap((category) =>
+      category.questions.map((item) => ({
+        '@type': 'Question',
+        name: item.q,
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: item.a,
+        },
+      }))
+    ),
+  };
+
   const toggleFAQ = (qIndex: number) => {
     setOpenQuestion(openQuestion === qIndex ? null : qIndex);
   };
@@ -57,6 +73,10 @@ export default function FAQ() {
 
   return (
     <section className="py-24 border-t border-white/10 bg-brand-surface relative z-10">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
       <div className="container mx-auto px-6 max-w-6xl">
         <div className="mb-12 md:mb-16">
           <p className="text-xs uppercase tracking-[0.3em] text-accent mb-4 border-l-2 border-accent pl-4 font-body">{t('label')}</p>
