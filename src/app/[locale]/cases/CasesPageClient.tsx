@@ -29,7 +29,6 @@ const caseData: Omit<CaseItem, 'id' | 'description' | 'left' | 'top' | 'width' |
   { client: 'Ab incorporadora', project: 'Ronald42', images: ['/cases/ab-incorporadora_ronald42.webp', '/cases/ab-incorporadora_ronald42-2.webp'] },
   { client: 'Hospital da plastica', images: ['/cases/hospital-da-plastica.webp', '/cases/hospital-da-plastica-2.webp'] },
   { client: 'Nazale', project: 'Viz', images: ['/cases/nazale_viz.webp', '/cases/nazale_viz-2.webp'] },
-  { client: 'Nazale', project: 'Zephyr', images: ['/cases/nazale_zephyr.webp', '/cases/nazale_zephyr-2.webp', '/cases/nazale_zephyr-3.webp'] },
   { client: 'Voxxa', images: ['/cases/voxxa.webp', '/cases/voxxa-2.webp'] },
   { client: 'Arccio', project: 'Reserva park canella', images: ['/cases/arccio_reserva-park-canella.webp', '/cases/arccio_reserva-park-canella-2.webp'] },
   { client: 'Arskammer', images: ['/cases/arskammer.webp', '/cases/arskammer-2.webp'] },
